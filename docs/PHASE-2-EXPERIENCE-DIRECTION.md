@@ -641,13 +641,206 @@ Failure is where trust is made or broken. A platform that handles failure calmly
 
 ---
 
+## PART 18 — Memory Architecture (addendum from the Phase 2 review)
+
+*What the participant carries with them after they leave — and how the platform decides what that is.*
+
+### 18.1 The memory question
+
+If the visitor remembers nothing, the experience failed. Memory is designed in time horizons:
+
+| After | The participant should still hold | How it is proven |
+|---|---|---|
+| 30 seconds | The sentence — "Bring out the best in You." The feeling: "I could be that, on a stage." One event that belongs to them | They can say what it was, in seconds (Phase 1 §2.4; Phase 0 1.7) |
+| 5 hours | A story worth telling — a surprising rule ("team of two, ten slips, eight correct"), the transformation they saw, their own confirmation | They can tell a friend in one sentence (Phase 0 §8 share action) |
+| Next week | Their event, the date (TBD), and the knowledge that their place is held and updates will come | They return or stay awaiting announcements (Phase 0 12.5 return engine) |
+
+### 18.2 Memory Anchors (moments designed to stick)
+
+Not content — *moments*. The platform owns a small, fixed set, each repeated and reused instead of improvised:
+
+1. **The Promise** — the tagline in its signature setting (Bible 5.2); the opening beat (Part 4, 0–3 s).
+2. **The Transformation** — the before/after witness (Phase 1 §1.1): a carved vegetable, a painted pot, waste-to-wonder; the proof beat (Part 4, ~10 s).
+3. **The Surprising Rule** — a rule so exact it becomes a story ("ten slips, eight correct to win"); honest facts are memorable stories (Phase 0 §3.3).
+4. **The Calling Beat** — "Your stage is waiting." — the moment the story turns to the visitor (Part 4, ~45 s).
+5. **The Stamp** — the confirmation receipt (Phase 1.5 Part 6.4 Stamp); the "I'm registered" verdict.
+
+### 18.3 Rules of anchors
+
+1. **The share-variable law:** if an anchor cannot be repeated to a friend in one sentence, it is not an anchor.
+2. **Five anchors, no more** — the loud is rationed (Bible 13.5).
+3. **They all rhyme:** each anchor is an act of revealing (Part 3), so the five reinforce one identity and one memory (Phase 1.5 Part 3.3: nothing appears without being unveiled).
+
+**Trace:** Phase 0 §1.7, §8; Phase 1 §1.1, §2.4, §5.2; Phase 1.5 Part 3, Part 6.4; Charter §2.
+
+---
+
+## PART 19 — Anticipation Architecture (addendum from the Phase 2 review)
+
+### 19.1 The second arc
+
+The participant journey does **not end at registration**. It continues: *Register → Confirm → Anticipate → Arrive → Experience → Remember.* Registration is the hinge of the story, not its conclusion — participants should be **more** excited after registering than before the decision.
+
+### 19.2 The anticipation arc (after the doorway)
+
+| Stage | What the platform provides | Emotional job |
+|---|---|---|
+| Immediately after confirmation | The receipt + the stated next step | Triumph turns into the first true anticipation |
+| The waiting window | The participant's space, the official countdown when the date exists, updates when they exist (TBD — placeholder food) | The festival clock (Phase 1.5 Part 6.6) finds its true home |
+| Approach (near the date) | Their event's exact requirements: what to bring, phase of preparation | Knowledge grows; so does quiet confidence |
+| Event day | When, where, their slot, what to do | Calm and ready, not panic |
+| After | The verdict (the Stamp), the remembered good moments, the next edition | The final, shared beat (Phase 0 §5.5 lifecycle) |
+
+### 19.3 The rules of anticipation
+
+1. **Anticipation is truthful, never engineered** — a pending date says "announced soon" (Charter §7); no fabricated surprises (Part 14.3; blacklist 13).
+2. **Your Space is the heartbeat of anticipation** — the same home the platform gave the registered participant (Part 8; Phase 0 12.5) is also its anticipation engine.
+3. **The stamped receipt is protected** — after confirmation the platform never asks, never sells, never pressures; the next step simply stands at the door (Part 12.2; Part 23 silence after confirmation).
+
+**Trace:** Phase 0 §5.5, §6.4, §12.5; Phase 1.5 Part 6.6, Part 11.1 exceptions; Charter §3, §5.
+
+---
+
+## PART 20 — Recovery Experience
+
+### 20.1 Recovery is not "error handling"
+
+An error page reports the failure; a **recovery experience rebuilds confidence**. The professional question is not "what went wrong?" but **"how quickly can we rebuild the visitor's confidence?"** (Part 14 mapped how each failure should feel; this part defines the rebuild).
+
+### 20.2 The recovery contract (four steps, always in order)
+
+1. **Say it plainly** — the failure in the Ringmaster's honest voice; no jargon, no blame (Part 14.3; Phase 1 §1.6 Rule Keeper).
+2. **Show what is preserved** — nothing already entered was lost; state persists (Part 13.3).
+3. **Offer exactly one path** — a single clear way back to the journey (Part 14.2).
+4. **Let silence settle** — one beat of calm before anything else; never rush a recovered visitor (Part 14.1, Part 23).
+
+### 20.3 Recovery by kind
+
+| Kind | The rebuild |
+|---|---|
+| **Data** (missed entry, wrong input, wrong credentials — TBD) | Fixed in place; nothing resets; the platform visibly keeps their effort |
+| **Money** (payment failed / pending — TBD) | State visible, retry one step, "no double-charge" stated plainly, contact path — the money trust-killer (Part 15.4) |
+| **Eligibility** (not eligible) | An honest "no" + the nearest alternative + a real path to ask (when official rules arrive — TBD) |
+| **Availability** (event full) | The event states it plainly; the participant is offered the nearest alternative and the informed path (Part 14.2) |
+| **Context** (session, network) | Resume exactly where they stopped; an interrupted visit is never a lost visit (Part 11.3) |
+| **Confidence (the meta-recovery)** | After any failure the *next step itself* restores: recovery is where the platform proves it runs the world with the participant, not against them |
+
+### 20.4 The law
+
+A participant who failed and was recovered **trusts the platform more than one who never failed** (Part 14.4). In what follows, recovery is a designed feature and part of how the platform is experienced, not an exception to be handled.
+
+---
+
+## PART 21 — Time Architecture
+
+The experience is a function of **time**, not just of place. The platform always lives in a season (Phase 0 §5.5 lifecycle; §6.4 content states), and its behavior in each season is intentional.
+
+### 21.1 The seasons
+
+| Season | What the visitor is doing | What the platform leads with | What must never be stale |
+|---|---|---|---|
+| **Announcement** | Curious, not committed | The promise; what EVOKE is; the four worlds | A fake deadline — the schedule and dates are real only when announced (Part 22.2, TBD) |
+| **Registration window** | Deciding → committing | The doorway; the honest deadline (TBD); the journey beats (Parts 2–5) | Any ambiguous "register" state |
+| **Approach** (after registration, before the date) | Ready, registered | Their event and their space; dates and requirements as announced (TBD) | Any trace of "are you sure you want to?" — they earned the door already (Part 19) |
+| **Event day** | There | What to know, where to go, their slot (TBD) | All "register" language |
+| **Post-event** | Remembering | Winners (Stamp), the gallery, the next edition | Anything claiming the event hasn't happened |
+
+### 21.2 Rules of time
+
+1. **The platform always knows which season it is** and presents only that season's reality (Phase 0 5.2.8: stale registration pages are the #1 festival-site failure).
+2. **Every content unit carries its season** — dates "announced soon" until the real one exists (Charter §7, Part 9.2).
+3. **Different visitors live in different season shapes at once** — a first-time visitor watches the announcement, a registered participant watches the approach, and a fan watches the recap; the platform is a single platform rendered per visitor's own season (Part 12.7).
+
+---
+
+## PART 22 — Human Energy (a second emotional lens)
+
+Parts 6 and 7 mapped how the participant *feels* and how hard the mind *works*. Energy adds a tension axis: **how much effort the moment demands.**
+
+### 22.1 The energy curve
+
+```
+Energy
+high ──╮                             confirmation ──╮
+       │   discovery                (the stamp)     │
+mid ───────╲        ╲          ╱───────╲───────────╱
+            ╲        ╲        ╱ (form)   ╲         energy released
+            ╲        ╲      ╱  (low)      ╲       and replenished
+low ─────────╲        ╲    ╱               ╲
+              ╲        ╲  ╱                 ╲
+       arrival  word  event  decision  form  payment  confirm  anticipation
+```
+
+### 22.2 The two need the platform
+
+1. **The low-energy form:** form-filling is inherently low-energy and honest — the platform controls it rather than trying to "energize" it (that would be friction). What it does instead: never ask twice (Part 11.3), never present a forced turn (Part 7), celebrate the end of the form with the Stamp (which is the *lowest* point, the moment after the last click — the platform gives the peak there, not during).
+2. **The relief after the act:** the click's end is a drop in energy; the confirmation Stamp meets that with the highest accepted energy (Part 19.2), turning fall into excitement.
+
+### 22.3 The energy law
+
+- **Do not raise energy where the mind must work** (rules, forms) — raising energy there is friction.
+- **Do not drain energy where it is spent** (after last clicks) — reward it.
+- **The debit is repaid:** the platform may *borrow* attention and effort (the event page, the form), and it repays attention with the peak moments (the pulse, the stamp) and calm (silence, Part 23). A debt the platform does not repay is a break in Progressive Confidence (Charter §5).
+
+---
+
+## PART 23 — Silence
+
+*From exhibition design: not every room speaks; some rooms breathe. Where should the participant simply stop and absorb?*
+
+### 23.1 What a silence beat is
+
+A silence beat is a designed pause where **no new information arrives and no action is requested** — the participant's own response becomes the content, and the memory of the moment is given room (Part 18; the hush is a tempo — Phase 1.5 Part 11.3).
+
+### 23.2 The silences of the journey
+
+| Place | What the silence is for |
+|---|---|
+| After the promise (end of Act I) | The promise is the first anchor; it is allowed to rest before the story moves |
+| After the pulse | The transformation is absorbed before the world is introduced — the "wow" gets its moment |
+| After the rules (before the doorway) | The decision is made in the quiet — at the moment of the most honest part of the journey (Part 10.2) |
+| After the stamp of confirmation | The receipt stays clean, unaddressed — the confirmation plus the one next step, and nothing else (Part 12.2) |
+| After a recovery | One beat of calm before the visitor re-enters (Part 14.1, Part 20.2 step 4) |
+| After the closing | The story ends in the silence where the visitor chooses to respond |
+
+### 22.3 The rules of silence
+
+1. **Silence has no call to action** — a silence that asks for something is not a silence.
+2. **Silence is never a dead end** — the visitor can always move on; the silence is a permission to breathe, not a barrier (Part 12.2).
+3. **Silence is composed, not accidental** — it is the designed absence, the same empty space that is the stage floor (Bible 10, Part 4.4): the platform's spacing is its silence, and it is a decision, never a gap.
+
+---
+
+## Appendix B — Phase 2 Acceptance Review
+
+### B.1 Ownership
+
+This review is **run by the owner**, not by the implementing agent (per the Phase 2 review). It is a calm read of the Experience Direction document. It will be read again, honestly, before any wireframe is touched — and its result will gate Phase 3.
+
+### B.2 The five questions
+
+| # | Question | Pass condition |
+|---|---|---|
+| 1 | Can I imagine using this platform without seeing a single mockup? | Yes — the experience is defined closely enough to run in the mind |
+| 2 | Could someone else create completely different wireframes and still end up with the same experience? | Yes — the experience contract is stronger than any layout |
+| 3 | Does the participant always know what to do next? | Yes — the release strategy and decision tree leave no "what now" |
+| 4 | Is there any point where curiosity disappears before commitment? | No — the curiosity hands over only to certainty, never to emptiness |
+| 5 | Does registration feel like the natural conclusion of the story instead of the force? | Yes — the doorway is the story's ending condition, not a banner |
+
+### B.3 The gate
+
+- **Pass all five** → Phase 2.5 (Information Architecture Validation) may begin.
+- **Any failure** → the affected part is strengthened first; no wireframe work under any condition.
+
+---
+
 ## END OF PHASE 2
 
-**What this phase establishes:** the complete emotional and psychological specification of the platform — the participant story (Part 1), the narrative in five acts (Part 2), the chapter map (Part 3), the directed scroll (Part 4), the curiosity curve (Part 5), the emotional temperature (Part 6), the cognitive load rhythm (Part 7), the attention architecture (Part 8), the information release timing (Part 9), registration psychology (Part 10), the decision tree (Part 11), entry and exit strategy (Part 12), mobile-first psychology (Part 13), failure journeys (Part 14), trust architecture (Part 15), success definition (Part 16), and its own critique (Part 17).
+**What this phase establishes:** the complete emotional and psychological specification of the platform — the participant story (Part 1), the narrative in five acts (Part 2), the chapter map (Part 3), the directed scroll (Part 4), the curiosity curve (Part 5), the emotional temperature (Part 6), the cognitive load rhythm (Part 7), the attention architecture (Part 8), the information release timing (Part 9), registration psychology (Part 10), the decision tree (Part 11), entry and exit strategy (Part 12), mobile-first psychology (Part 13), failure journeys (Part 14), trust architecture (Part 15), success definition (Part 16), its own critique (Part 17), and the review addendum: memory anchors (Part 18), the second/anticipation arc (Part 19), recovery (Part 20), time seasons (Part 21), human energy (Part 22), and silence (Part 23).
 
-**What it does not establish:** any layout, component, visual, typography, color, motion, or code — deliberately. Those arrive in Phase 3 (Information Architecture Validation) and Phase 4 (Wireframes), which should now be near-mechanical because every experience decision has been made here.
+**What it does not establish:** any layout, component, visual, typography, color, motion, or code — deliberately. Those arrive in **Phase 2.5 (Information Architecture Validation — every content unit, section, click, and interaction must justify its existence)** and **Phase 3 (Wireframes)**; wireframing must not begin until Phase 2.5 is completed (Appendix B).
 
-**Open decisions for the owner:** Phase 0 Q1–Q5, Q12, Q19 (dates, venue, eligibility, registration model, contact, host) and all TBD items (Charter §7) — the experience contract above holds regardless; the details slot in when official information arrives.
+**Open decisions for the owner:** the Phase 2 acceptance review (Appendix B) is the next owner action, then Phase 0 Q1–Q5, Q12, Q19 (dates, venue, eligibility, registration model, contact, host) and all TBD items (Charter §7) — the experience contract above holds regardless; the details slot in when official information arrives.
 
 
 
