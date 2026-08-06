@@ -172,6 +172,8 @@ EVOKE '2K25 is an **inter-school festival** — a competitive and creative gathe
 
 **Audience priority ranking for design decisions:** Participant Students (1) > Coordinators/Teachers (2) > Parents (3) > Organizers (4) > Judges (5) > Future participants (6) > Sponsors (7) > Public (8). Design must serve students emotionally and coordinators operationally — these two are in tension and must be balanced, not traded off.
 
+**Focus rule (do not optimize for "everyone"):** Design primarily for **Students (emotion)** and **Coordinators (information)**. Everyone else is secondary. This is how the product stays focused — every screen is either emotionally magnetic for a student or operationally precise for a coordinator. If a design element serves neither, it does not belong.
+
 ---
 
 ## 3. Content Audit (from the rule book — source of truth)
@@ -468,7 +470,7 @@ Award-winning event sites (Webby 2026 winners/nominees, Awwwards/FWA/FWA-class s
 | **Home** | Identity, energy, the 3 W's, top-level navigation, featured events, latest news | The front door; must answer What/When/Where in 5 seconds |
 | **About the Festival** | What EVOKE is, tagline, mission, host school, history/editions | Builds trust and identity for parents, sponsors, newcomers |
 | **Events (browse)** | Full catalogue grouped by On-Stage / Off-Stage clusters | The core discovery surface; students explore "what can I do?" |
-| **Event detail** | One page per event: rules, team size, time limit, theme, materials to bring, judging criteria | The operational contract for coordinators and participants |
+| **Event detail** | One page per event: rules, team size, time limit, theme, materials to bring, judging criteria — see the mini-experience structure below | The operational contract for coordinators and participants |
 | **Schedule** | Day-wise/event-wise timeline | Logistics; when and where each event happens **[requires data]** |
 | **Registration** | Team registration flow with school quota rules | The conversion point — the festival's most important operation |
 | **Rules & Eligibility** | General rules, per-school limits, decency/originality policy | Answers coordinator questions without hunting |
@@ -498,6 +500,23 @@ Award-winning event sites (Webby 2026 winners/nominees, Awwwards/FWA/FWA-class s
 4. **Post-event** — winners, gallery, thanks, "see you next year"
 
 Each state must be explicit; stale states are the #1 failure in event sites (see 5.2/5.3).
+
+### 6.5 Event page: not a form, a mini-experience
+
+Each event page is its own experience with personality — the page for Group Dance and the page for Pencil Sketch should not feel like the same page filled with different text. The event's cluster personality (Section 4) shapes its visual telling. A single, consistent information sequence covers all events:
+
+1. **Introduction** — a short, warm, one-paragraph story of the event
+2. **Quick facts** — team size, duration, stage/off-stage
+3. **Theme** — where one exists (Fashion, Veg Carving, Pot Painting, Collage, Pencil Sketch)
+4. **Participation** — who can join, team format, school/class quota rules
+5. **Experience** — what it feels like to take part (energy and vibe, from Section 4)
+6. **Rules** — official, worded faithfully to the rule book (never reworded in a way that changes meaning)
+7. **Judging criteria** — exactly what judges evaluate
+8. **Things to bring** — the universal and event-specific materials lists
+9. **FAQ** — the recurring coordinator/student questions for this specific event
+10. **Register** — the CTA and any per-event registration notes
+
+This gives each event discoverable depth without burying the rules — the emotional part breathes, the operational part stays scannable.
 
 ---
 
@@ -566,6 +585,8 @@ Each state must be explicit; stale states are the #1 failure in event sites (see
 | **Return visits** | Excitement building toward the date | ≥ 25% of visitors return (countdown period) |
 | **Mobile performance** | Mobile is the primary device | Load ≤ 3s on mid-range 4G |
 | **Page performance** | Performance is part of craft | Lighthouse ≥ 90 across categories |
+| **Layout stability (CLS)** | Visual stability during load | CLS < 0.1 |
+| **Interactivity (INP)** | Responsiveness to user input | INP < 200 ms |
 | **Accessibility pass** | Baseline credibility in 2026 | WCAG AA compliance, keyboard-complete, reduced-motion supported |
 | **User satisfaction** | Subjective experience | ≥ 80% positive (short survey / feedback form) |
 | **Queries to organizer** | Info self-sufficiency | Decline vs. expected volume; most questions answered by site |
@@ -644,7 +665,45 @@ Each state must be explicit; stale states are the #1 failure in event sites (see
 
 ---
 
-## 12. What "Done" means for Phase 0
+## 12. Non-Negotiable Principles
+
+This is the rulebook for every later phase. Whenever a new idea, design, or implementation is proposed, it must be checked against this list. If a proposal violates a principle, the proposal is redesigned — the principle is not bent.
+
+1. **The website should never feel like an admin dashboard.** It is the face of a festival — every screen must carry energy, even the most practical ones.
+2. **Every animation must have purpose.** Motion tells the festival story; it is never decoration. If a movement does not serve emotion or clarity, it is removed.
+3. **No generic AI sections.** Every section is written for EVOKE '2K25: its events, its audiences, its tone. Nothing reads like a template.
+4. **No repeated layouts.** Each event page is a mini-experience with its own personality (Section 6.5); clusters and screens do not copy stickers over each other's structure.
+5. **No placeholder content.** Nothing ships that says "TBD", "Lorem", or uses invented rules. Real rules come from the rule book; missing data waits for the organizer.
+6. **Content drives design.** A design is only as good as the real event content it carries. Structure is chosen after the content is understood, never before.
+7. **Accessibility is required.** WCAG AA, keyboard-complete, screen-reader compatible, reduced-motion supported — not a nice-to-have.
+8. **Performance is a feature.** Core Web Vitals (LCP, CLS < 0.1, INP < 200 ms) are acceptance criteria, tested on mid-range mobile devices.
+9. **Desktop and mobile receive equal attention.** Mobile is primary (65%+ of traffic), but desktop is not an afterthought — both are designed deliberately.
+10. **Every page tells part of the festival story.** The site is one continuous narrative: emotion first, information second, action third.
+11. **Consistency is more important than novelty.** Reusing a good pattern across pages beats a new clever idea for its own sake.
+12. **Visual hierarchy is intentional.** Every screen has a clear "what to look at first, then what, then what" — decided in design, not arrived at by accident.
+13. **The website should age well.** It is built to evolve into EVOKE '2K26 without a redesign; today's decisions never paint the site into a corner.
+14. **Nothing is added simply because it looks cool.** Every element earns its place by serving an audience (Students = emotion, Coordinators = information, or the festival story).
+
+## 13. Phase 0 Review Record
+
+| Area | Score |
+|---|---|
+| Research | 9/10 |
+| UX | 8.5/10 |
+| Design Foundation | 8/10 |
+| Engineering Planning | 7.5/10 |
+| Documentation | 9.5/10 |
+| **Overall** | **8.7/10 — Discovery phase is solid** |
+
+**Reviewer adjustments incorporated:** audience focus rule (2.9) · event-page mini-experience structure (6.5) · CLS and INP added to metrics (8) · D1/D2/D3/D4/D5/D6 confirmed as-is with the additions above. D7 (no implementation in Phase 0) stands.
+
+## 14. Process Directive for Phase 1 and beyond
+
+Before producing any output in Phase 1+, **re-read the entire Discovery Document and treat it as immutable.** Every recommendation must be traceable to Phase 0. If a new idea contradicts anything in this document, explicitly explain which principle/decision it conflicts with and request approval — never silently change direction.
+
+---
+
+## 15. What "Done" means for Phase 0
 
 Phase 0 is complete when the human/organizer:
 1. Reviews and approves this document (or requests edits),
