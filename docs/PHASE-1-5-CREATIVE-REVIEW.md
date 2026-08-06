@@ -451,6 +451,61 @@ A page is EVOKE if: the composition shows slips on a stage floor; at least one r
 
 ---
 
+## PART 11 — Negative Grammar, Slip Universality, Visual Rhythm (addendum from the review session)
+
+*Added after the Phase 1.5 review session. This part refines Parts 3–7; it contradicts nothing above.*
+
+### 11.1 Negative grammar — when to intentionally break our own rules
+
+Rules protect the identity; named exceptions make it breathe. An exception must be **named before it is used** — propose, approve, document — never improvised by a designer mid-build.
+
+| # | Named exception | Breaks | Purpose | Scope |
+|---|---|---|---|---|
+| 1 | **The Opening Act** — homepage hero | normal spacing rhythm (Part 4.4) | marks the threshold between outside and festival; the widest hush on the site | hero only |
+| 2 | **The Stamp spring-in** | the no-bounce law (Part 7.1.1) | a verdict needs exactly one impact | result moments only |
+| 3 | **The Tear** | precision edges (Bible 7) | craft clusters are hand-made | Art/Maker only |
+| 4 | **The festival clock** | nothing-perpetual (Part 7.1.5) | countdowns are functional, never ambient | timers/countdowns |
+| 5 | **The lost slip** — 404 / error pages | the entire grammar, deliberately | the only page allowed to be offstage: a torn, empty slip — "this slip got lost" | error pages |
+| 6 | **The waiting slip** — empty states | "every slip has content" | negative space *is* the message: this slip waits for your name | empty states, form completion |
+
+**Rule:** breaking a rule is a *moment*, not a permission. If the visitor can't remember the moment, it wasn't an exception — it was a mistake.
+
+### 11.2 The slip universality test — is it branding or decoration?
+
+A device that only wraps content is decoration. A device that can carry **every layer** of the experience is branding. The slip was tested across all eight surfaces:
+
+| Surface | The slip exists as | Verdict |
+|---|---|---|
+| Motion | the mover — sweep, lift, tear are slip behaviors | PASS |
+| Lighting | the spotlight — a slip on the Ink surface is *lit* | PASS |
+| Navigation | nav items = slips in a horizontal stack; active = lifted | PASS |
+| Transitions | the curtain = stacked slips parting | PASS |
+| Empty space | the stage floor; the waiting slip (11.1.6) | PASS |
+| Loading | the slip drawing itself — skeleton = slip outline + amber ink fill | PASS |
+| Forms | inputs = slips waiting for the pen | PASS |
+| Error pages | the torn, lost slip (11.1.5) | PASS |
+
+**Conclusion:** the slip is real branding — it exists at every layer, and the pen (cursor, focus) is its tool. Any future surface that **cannot** be expressed as a slip must explain why, in writing, before it is built.
+
+### 11.3 Visual rhythm — tempo, not just grammar
+
+Grammar says how scenes compose; tempo says how they breathe. The festival rhythm:
+
+**fast → slow → quiet → dense → open → impact → silence**
+
+- **Beat alternation:** no two consecutive sections share the same tempo; the alternation *is* the rhythm.
+- **Density is content-typed** (the basis of the Phase 2 Information Density Map): hero = almost no text; about = slightly more; events = rich; rules/logistics = calm, structured density; registration = simple again; footer = minimal silence.
+- **The hush is a tempo, not an absence:** silence sections (footer, chapter gaps) are composed like every other beat.
+- **Reading rhythm, not animation rhythm:** this map governs how much the eye is asked to do per section; motion (Part 7) follows it, never fights it.
+
+### 11.4 The one last rule (binds every future phase)
+
+> **Nothing may be designed because it looks good. Every visual decision must answer: what user problem or emotional goal does this solve? If no answer exists, remove it.**
+
+This rule sits above the EVOKE Test: the Test catches the generic; this rule catches the gratuitous. It is part of this constitution and of AGENTS.md.
+
+---
+
 ## END OF REVIEW
 
 **What this review adds to the project:**
@@ -462,5 +517,9 @@ A page is EVOKE if: the composition shows slips on a stage floor; at least one r
 6. The Generic-Risk map + enforcement mechanism (Part 8).
 7. The EVOKE Test (Part 9) — the gatekeeper for all future phases.
 8. Appendix A (Part 10) — the mandatory-reading constitution of the language.
+9. Negative Grammar (Part 11.1) — the named exceptions to our own rules.
+10. Slip Universality (Part 11.2) — proof the slip is branding at every layer.
+11. Visual Rhythm (Part 11.3) — the tempo map every page must follow.
+12. The One Last Rule (Part 11.4) — nothing exists without a solved problem or an emotional goal.
 
 **What it does not change:** the Brand Bible's personality, values, colors, typography, motion personality, blacklist, or constitution. The review refines them into an executable identity.
