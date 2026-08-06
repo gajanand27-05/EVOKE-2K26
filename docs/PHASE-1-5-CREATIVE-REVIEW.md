@@ -1,10 +1,10 @@
-# EVOKE '2K25 — Creative Direction Review (Phase 1.5)
+# EVOKE 2K26 — Creative Direction Review (Phase 1.5)
 
 *Signature Language · Design Critique · The Missing Chapter of the Brand Bible*
 
 | | |
 |---|---|
-| **Project** | EVOKE '2K25 — Official Website (Inter-School Festival) |
+| **Project** | EVOKE 2K26 — Participant & Registration Platform (Inter-School Festival) |
 | **Phase** | 1.5 — Creative Direction Review (no UI, no code) |
 | **Documents in force** | Phase 0 Discovery Document (immutable) · Phase 1 Brand Bible (immutable) · **this review (strengthens both, replaces nothing)** |
 | **Status** | Draft for review — Appendix A becomes mandatory reading for all later phases |
@@ -108,7 +108,7 @@ A genre is not an identity. The difference between a genre and an identity is **
 | 3 | **A pattern vocabulary** (the brand wallpaper) | Graphic skin can't actually be used; surfaces look empty or random | Phase 2 (already listed, Bible 15.1) |
 | 4 | **A numeral/clock language** | Countdowns and time limits — the festival's core data — will be styled ad hoc | Part 3, device family |
 | 5 | **An event-mark grid discipline** | 16 marks drift into 16 styles | Phase 2 (Bible 6) |
-| 6 | **A logo/wordmark position** | The Bible treats "EVOKE '2K25" as text; without a lockup decision, the wordmark fights the typographic system | Phase 2 |
+| 6 | **A logo/wordmark position** | The Bible treats "EVOKE 2K26" as text; without a lockup decision, the wordmark fights the typographic system | Phase 2 |
 | 7 | **A "final" stamp treatment** | "Judges' decision is final" appears 16 times (Phase 0 3.3.1) — the single most repeated content on the site, and the Bible gives it no treatment | Part 5 |
 | 8 | **Enforcement mechanics** | Nothing yet says *how* blacklist/Constitution are checked in reviews | Part 8 |
 

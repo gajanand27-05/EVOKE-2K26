@@ -1,10 +1,10 @@
-# EVOKE '2K25 — Phase 0 Discovery Document
+# EVOKE 2K26 — Phase 0 Discovery Document
 
 | | |
 |---|---|
-| **Project** | EVOKE '2K25 — Official Website (Inter-School Festival) |
+| **Project** | EVOKE 2K26 — Participant & Registration Platform (Inter-School Festival) |
 | **Phase** | 0 — Product Discovery / Research / Experience Planning |
-| **Source of truth** | `dhanush-site-notes.pdf` — "Evoke'2k25 On-Stage and Off-Stage Events Rule Book" (8 pages) |
+| **Source of truth** | `dhanush-site-notes.pdf` — "Evoke'2k25 On-Stage and Off-Stage Events Rule Book" (8 pages) — the **previous edition's rulebook**, used as the reference until official 2K26 rules arrive (Product Charter §9) |
 | **Tagline** | "Bring out the best in You." |
 | **Status** | For review and approval — no design or implementation begins until this is approved |
 
@@ -16,7 +16,7 @@
 
 ### 1.1 What is this festival?
 
-EVOKE '2K25 is an **inter-school festival** — a competitive and creative gathering where students from multiple schools compete across 16 events spanning performance (stage) and artistic/craft (off-stage) disciplines. The rule book officially divides the programme into **On-Stage** and **Off-Stage** events. The tagline — *"Bring out the best in You"* — is the festival's core promise: it is not just a contest, it is a platform for students to discover and display talents they do not usually get to show inside a classroom.
+EVOKE 2K26 is an **inter-school festival** — a competitive and creative gathering where students from multiple schools compete across 16 events spanning performance (stage) and artistic/craft (off-stage) disciplines. The rule book officially divides the programme into **On-Stage** and **Off-Stage** events. The tagline — *"Bring out the best in You"* — is the festival's core promise: it is not just a contest, it is a platform for students to discover and display talents they do not usually get to show inside a classroom.
 
 ### 1.2 What purpose does it serve?
 
@@ -24,7 +24,7 @@ EVOKE '2K25 is an **inter-school festival** — a competitive and creative gathe
 2. **A school community event** — schools compete, but the tone of the rules (modesty, decency, originality) suggests a values-driven, community-building event rather than a purely commercial one.
 3. **A bridge between academic identity and creative identity** — events like G.K. Quiz sit alongside Fashion Show and Best Out of Waste, signaling that "smart" and "creative" students are equally celebrated.
 4. **A marketing/institution-building instrument** — inter-school events position the hosting school and its student committee as organisers of quality experiences (visible in the professional rule book structure).
-5. **A repeatable annual ritual** — "2K25" implies an edition-based structure ("2K24", "2K26" likely exist/follow), meaning the website should feel like an annual institution, not a one-off landing page.
+5. **A repeatable annual ritual** — the rule book's "2K25" implies an edition-based structure ("2K24", "2K26" exist/follow), meaning the platform should feel like an annual institution, not a one-off landing page.
 
 ### 1.3 Why would schools participate?
 
@@ -623,7 +623,7 @@ This gives each event discoverable depth without burying the rules — the emoti
 ## 10. Open Questions (all **[MISSING]** — no answers invented)
 
 ### 10.1 From the rule book (information the document itself does not provide)
-1. **Q1 — Festival dates**: The exact date(s) of EVOKE '2K25 are not in the document.
+1. **Q1 — Festival dates**: The exact date(s) of EVOKE 2K26 are not in the document.
 2. **Q2 — Venue**: Where the festival takes place is not stated.
 3. **Q3 — On/Off-Stage tagging**: The title says "On-Stage and Off-Stage" but no event is explicitly tagged; we have inferred 1–8 as On-Stage and 9–16 as Off-Stage. Needs confirmation.
 4. **Q4 — Registration**: Process, deadline, mode (online/offline), registration fees, who registers (school vs individual) — not stated.
@@ -643,8 +643,8 @@ This gives each event discoverable depth without burying the rules — the emoti
 16. **Q16 — Social channels**: Instagram/WhatsApp/Facebook handles for links and sharing.
 17. **Q17 — Languages**: Is the site English-only, or also regional language(s)?
 18. **Q18 — Media/press**: Is there a media kit or press angle?
-19. **Q19 — Host school**: Which school hosts EVOKE '2K25 (for About + credibility)?
-20. **Q20 — History**: Is 2K25 the first edition or an annual event (affects archive/gallery needs)?
+19. **Q19 — Host school**: Which school hosts EVOKE 2K26 (for About + credibility)?
+20. **Q20 — History**: Is 2K26 the first edition of this name or an annual event (affects archive/gallery needs)?
 21. **Q21 — Admin capabilities**: Who will manage content post-launch — tech-savvy committee members or dedicated team?
 22. **Q22 — Registration data**: What fields does the organizer need per team (name, class, school, guardian contact, track names, etc.)?
 
@@ -657,7 +657,7 @@ This gives each event discoverable depth without burying the rules — the emoti
 ## 11. Assumptions (explicitly recorded)
 
 1. "On-Stage" = events 1–8, "Off-Stage" = events 9–16 (inference — Q3).
-2. The festival is an annual institution ("2K25" edition pattern).
+2. The festival is an annual institution (the 2K25 rule book confirms the edition pattern; this build is 2K26).
 3. Wholesome, values-based tone (decency/originality clauses) is part of the brand the site must reflect.
 4. Students primarily browse on mobile phones; coordinators on desktops.
 5. The website is the official digital identity — announcements on the site must be the source of truth over WhatsApp/social channels (to be confirmed).
@@ -671,7 +671,7 @@ This is the rulebook for every later phase. Whenever a new idea, design, or impl
 
 1. **The website should never feel like an admin dashboard.** It is the face of a festival — every screen must carry energy, even the most practical ones.
 2. **Every animation must have purpose.** Motion tells the festival story; it is never decoration. If a movement does not serve emotion or clarity, it is removed.
-3. **No generic AI sections.** Every section is written for EVOKE '2K25: its events, its audiences, its tone. Nothing reads like a template.
+3. **No generic AI sections.** Every section is written for EVOKE 2K26: its events, its audiences, its tone. Nothing reads like a template.
 4. **No repeated layouts.** Each event page is a mini-experience with its own personality (Section 6.5); clusters and screens do not copy stickers over each other's structure.
 5. **No placeholder content.** Nothing ships that says "TBD", "Lorem", or uses invented rules. Real rules come from the rule book; missing data waits for the organizer.
 6. **Content drives design.** A design is only as good as the real event content it carries. Structure is chosen after the content is understood, never before.

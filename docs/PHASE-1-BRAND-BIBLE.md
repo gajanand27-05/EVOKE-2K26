@@ -1,10 +1,10 @@
-# EVOKE '2K25 — The Brand Bible
+# EVOKE 2K26 — The Brand Bible
 
 *Phase 1 — Brand Identity · Visual Language · Design System Strategy*
 
 | | |
 |---|---|
-| **Project** | EVOKE '2K25 — Official Website (Inter-School Festival) |
+| **Project** | EVOKE 2K26 — Participant & Registration Platform (Inter-School Festival) |
 | **Phase** | 1 — Brand Identity (no UI, no code) |
 | **Documents in force** | Phase 0 Discovery Document (immutable) + this Brand Bible (immutable downstream) |
 | **Status** | Draft for review — nothing in later phases may contradict this document without explicit justification |
@@ -23,9 +23,9 @@ This is not a list of aesthetic preferences. Every decision in this document exi
 
 ### 1.1 The central question
 
-> *"If EVOKE '2K25 were a living personality, who would it be?"*
+> *"If EVOKE 2K26 were a living personality, who would it be?"*
 
-**EVOKE '2K25 is The Electric Ringmaster.**
+**EVOKE 2K26 is The Electric Ringmaster.**
 
 A young, supremely capable conductor who steps into a spotlight, adjusts a self-made bright collar, and turns each person in the audience into a performer for sixty seconds. Not through noise — through a festival of *becoming*: a quiet pencil becomes a monument, a pile of waste becomes a treasure, a nervous child becomes the voice of the room.
 
@@ -43,7 +43,7 @@ The brand's DNA is the **before-and-after** — the moment something ordinary be
 ### 1.2 The brand as a person
 
 - **Name:** The Electric Ringmaster (working identity)
-- **Age:** mid-teens — old enough to command a stage, young enough to be one of the students. Around **16**, and the edition mark (2K25) matures with him but never ages him.
+- **Age:** mid-teens — old enough to command a stage, young enough to be one of the students. Around **16**, and the edition mark (2K26) matures with him but never ages him.
 - **Voice:** warm, generous, precise. He announces with flourish ("And NOW, the stage lights up for…") but checks the clock like a pro. He does not yell; he is **loud with a cue, not loud with volume.** Humor is deft, never goofy; inclusive, never mocking.
 - **Character:** confident but **never arrogant**, disciplined but **never rigid**. He obeys the rule book — because a festival that lies about its own rules loses its audience. He is the youngest person in the room running it like it matters.
 - **Attitude:** "Catch the spark before you know what to do with it." Ready to applaud instantly. Enjoys the loud talkies, the silent concentration, the traded pens.
@@ -52,7 +52,7 @@ The brand's DNA is the **before-and-after** — the moment something ordinary be
 
 ### 1.3 If EVOKE were…
 
-| If EVOKE '2K25 were… | it would be |
+| If EVOKE 2K26 were… | it would be |
 |---|---|
 | **a person** | The Electric Ringmaster. |
 | **a movie** | A school-set story where the shy and the loud share one stage and both win — the film of the students, not the winners; a soundtrack of the crowd more than the chorus. |
@@ -542,7 +542,7 @@ These 24 expand Phase 0's 14 non-negotiable principles into the visual domain. W
 ### 15.1 What this document does not decide (left open for Phase 2)
 
 - Exact fonts, exact hex values, exact spacing units, exact motion curves — all to be selected/proved in Phase 2 against these philosophies.
-- Logo marks: the wordmark "EVOKE '2K25" exists conceptually but its drawing is a Phase 2 deliverable.
+- Logo marks: the wordmark "EVOKE 2K26" exists conceptually but its drawing is a Phase 2 deliverable.
 
 ---
 
