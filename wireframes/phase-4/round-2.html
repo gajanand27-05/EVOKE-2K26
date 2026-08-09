@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVOKE 2K26 — Phase 4 Round 2 Wireframe</title>
+</head>
+<body>
+
+<style>
+  :root{
+    --paper:#FAFAF8; --ink:#1A1A18; --wire:#C9C9C2; --wire-2:#E4E4DE;
+    --mid:#6B6B66; --note:#2D5BA8; --note-bg:#EDF1F9; --tbd:#8A6A1F; --tbd-bg:#FBF4E2;
+    --frame-bg:#EFEFEA; --ok:#2F6B4F; --err:#A4322A; --err-bg:#FBEDEC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1B1B1E; --ink:#EDEDE8; --wire:#3E3E44; --wire-2:#2A2A2F;
+      --mid:#9A9A94; --note:#89AEEA; --note-bg:#1E2735; --tbd:#D9B45F; --tbd-bg:#2C2618;
+      --frame-bg:#121214; --ok:#78C0A0; --err:#E88C82; --err-bg:#2E1D1B; }
+  }
+  :root[data-theme="dark"]{ --paper:#1B1B1E; --ink:#EDEDE8; --wire:#3E3E44; --wire-2:#2A2A2F;
+    --mid:#9A9A94; --note:#89AEEA; --note-bg:#1E2735; --tbd:#D9B45F; --tbd-bg:#2C2618;
+    --frame-bg:#121214; --ok:#78C0A0; --err:#E88C82; --err-bg:#2E1D1B; }
+  :root[data-theme="light"]{ --paper:#FAFAF8; --ink:#1A1A18; --wire:#C9C9C2; --wire-2:#E4E4DE;
+    --mid:#6B6B66; --note:#2D5BA8; --note-bg:#EDF1F9; --tbd:#8A6A1F; --tbd-bg:#FBF4E2;
+    --frame-bg:#EFEFEA; --ok:#2F6B4F; --err:#A4322A; --err-bg:#FBEDEC; }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--frame-bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:16px;line-height:1.5}
+
+  .chrome{position:sticky;top:0;z-index:50;background:var(--paper);
+    border-bottom:2px solid var(--ink);padding:10px 16px;
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .chrome h1{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+    margin:0;font-family:ui-monospace,monospace;font-weight:700}
+  .chrome h1 span{display:block;font-weight:400;color:var(--mid);letter-spacing:.06em}
+  .ctrl{display:flex;align-items:center;gap:6px}
+  .ctrl > .lbl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--mid);font-family:ui-monospace,monospace}
+  .seg{display:flex;border:1px solid var(--wire);border-radius:2px;overflow:hidden}
+  .seg button{font:inherit;font-size:.72rem;padding:5px 10px;background:transparent;
+    border:0;border-right:1px solid var(--wire);color:var(--mid);cursor:pointer;
+    font-family:ui-monospace,monospace}
+  .seg button:last-child{border-right:0}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .seg button:focus-visible,.chrome button:focus-visible{outline:2px solid var(--note);outline-offset:1px}
+
+  .note-banner{background:var(--note-bg);border-bottom:1px solid var(--wire);
+    padding:8px 16px;font-size:.78rem}
+  .note-banner strong{font-family:ui-monospace,monospace;font-size:.7rem;
+    letter-spacing:.1em;text-transform:uppercase}
+
+  .stage{padding:22px 16px 60px;display:flex;justify-content:center}
+  .frame{background:var(--paper);border:2px solid var(--ink);width:100%;
+    max-width:390px;min-height:660px;position:relative}
+  .frame.tablet{max-width:768px}
+  .frame.desktop{max-width:1180px}
+  .frame-tag{position:absolute;top:-11px;left:12px;background:var(--paper);
+    padding:0 6px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--mid);font-family:ui-monospace,monospace}
+
+  .zone{border:1px dashed var(--wire);margin:10px;padding:12px;position:relative}
+  .zone > .zlabel{position:absolute;top:-9px;left:8px;background:var(--paper);
+    padding:0 5px;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--mid);font-family:ui-monospace,monospace}
+  .anno{display:none;background:var(--note-bg);border-left:3px solid var(--note);
+    padding:7px 9px;margin:9px 0 0;font-size:.73rem;line-height:1.45}
+  .anno b{font-family:ui-monospace,monospace;font-size:.66rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--note);display:block;margin-bottom:2px}
+  body.show-anno .anno{display:block}
+  .flag{display:none;background:var(--err-bg);border-left:3px solid var(--err);
+    padding:7px 9px;margin:9px 0 0;font-size:.73rem;line-height:1.45}
+  .flag b{font-family:ui-monospace,monospace;font-size:.66rem;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--err);display:block;margin-bottom:2px}
+  body.show-anno .flag{display:block}
+
+  .tbd{display:inline-block;background:var(--tbd-bg);color:var(--tbd);
+    border:1px dashed var(--tbd);padding:1px 6px;font-size:.68rem;
+    font-family:ui-monospace,monospace;letter-spacing:.04em}
+
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{position:static;display:block;margin:8px;padding:6px;border:2px solid var(--note);font-size:.8rem}
+  .site-head{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 12px;border-bottom:1px solid var(--wire)}
+  .logo{font-weight:700;letter-spacing:.04em;font-size:.9rem}
+  .site-foot{border-top:1px solid var(--wire);padding:12px;font-size:.72rem;color:var(--mid)}
+
+  /* steps */
+  .steps{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-bottom:7px}
+  .step{flex:1;min-width:38px;height:5px;background:var(--wire-2);position:relative}
+  .step.done{background:var(--ink)}
+  .step.now{background:var(--ink);opacity:.55}
+  .step.maybe{background:repeating-linear-gradient(90deg,var(--tbd) 0 4px,transparent 4px 8px)}
+  .steplabel{font-size:.68rem;color:var(--mid);font-family:ui-monospace,monospace}
+  .declared{border:1px solid var(--wire-2);padding:9px;margin-top:9px}
+  .declared ol{margin:5px 0 0;padding-left:1.2em;font-size:.8rem}
+  .declared li{margin-bottom:3px}
+
+  /* forms */
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:.8rem;font-weight:600;margin-bottom:4px}
+  .field .hint{font-size:.72rem;color:var(--mid);margin:0 0 5px}
+  .field input,.field select{width:100%;font:inherit;font-size:.9rem;padding:10px;
+    min-height:44px;border:1px solid var(--wire);background:var(--paper);color:var(--ink)}
+  .field input:focus-visible,.field select:focus-visible{outline:3px solid var(--note);outline-offset:1px}
+  .field.bad input,.field.bad select{border-color:var(--err);border-width:2px}
+  .err{display:block;font-size:.76rem;color:var(--err);margin-top:4px}
+  .req{color:var(--mid);font-weight:400;font-size:.72rem}
+  .errsum{border:2px solid var(--err);background:var(--err-bg);padding:10px;margin-bottom:12px;font-size:.82rem}
+  .errsum ul{margin:6px 0 0;padding-left:1.2em}
+  .errsum a{color:var(--err)}
+
+  .member{border:1px solid var(--wire-2);padding:10px;margin-bottom:9px}
+  .member h4{margin:0 0 8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--mid);font-family:ui-monospace,monospace;display:flex;justify-content:space-between;gap:8px}
+  .rm{font:inherit;font-size:.72rem;background:transparent;border:1px solid var(--wire);
+    padding:3px 8px;cursor:pointer;color:var(--mid);min-height:28px}
+  .roster-meta{font-size:.76rem;color:var(--mid);margin:0 0 9px}
+
+  .cta{display:block;width:100%;font:inherit;font-size:.95rem;font-weight:600;
+    padding:13px 20px;min-height:44px;border:2px solid var(--ink);background:transparent;
+    color:var(--ink);cursor:pointer;text-align:center;margin-bottom:8px}
+  .cta[disabled]{border-style:dashed;color:var(--mid);cursor:not-allowed}
+  .cta.secondary{font-weight:400;border-width:1px;font-size:.85rem;padding:10px 14px}
+  .cta:focus-visible,.rm:focus-visible,.acc-q:focus-visible,.linkish:focus-visible{outline:3px solid var(--note);outline-offset:2px}
+  .frame.desktop .cta,.frame.tablet .cta{width:auto;min-width:200px;display:inline-block;margin-right:8px}
+  .actions{display:flex;flex-direction:column;gap:0}
+  .frame.desktop .actions,.frame.tablet .actions{flex-direction:row;flex-wrap:wrap;gap:8px}
+
+  .linkish{background:none;border:0;font:inherit;font-size:.8rem;color:var(--ink);
+    text-decoration:underline;cursor:pointer;padding:6px 0;min-height:32px}
+
+  .summary{border:1px solid var(--wire)}
+  .srow{display:flex;gap:10px;padding:9px 10px;border-bottom:1px solid var(--wire-2);font-size:.85rem;align-items:baseline}
+  .srow:last-child{border-bottom:0}
+  .srow dt{flex:0 0 34%;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--mid);font-family:ui-monospace,monospace;margin:0}
+  .srow dd{margin:0;flex:1}
+  .srow .edit{flex:none}
+
+  .stamp{border:3px double var(--ink);padding:16px;text-align:center;margin-bottom:12px}
+  .stamp .big{font-size:1.3rem;font-weight:700;margin:0 0 5px}
+  .stamp .ref{font-family:ui-monospace,monospace;font-size:.8rem;color:var(--mid)}
+
+  .card{border:1px solid var(--wire);padding:11px;margin-bottom:9px}
+  .card h4{margin:0 0 5px;font-size:.9rem}
+  .card .meta{font-size:.75rem;color:var(--mid)}
+  .delta{border:2px solid var(--ink);padding:11px;margin-bottom:11px}
+  .empty{border:1px dashed var(--wire);padding:30px 14px;text-align:center;color:var(--mid);font-size:.88rem}
+
+  h2.sec{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);
+    font-family:ui-monospace,monospace;margin:0 0 8px;font-weight:700}
+  .rules{margin:0;padding-left:1.15em;font-size:.85rem}
+  .rules li{margin-bottom:6px;max-width:60ch}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="chrome">
+  <h1>EVOKE 2K26 · Phase 4 Round 2 · v0<span>Registration → payment placeholder → confirmation → Your Space</span></h1>
+  <div class="ctrl"><span class="lbl" id="vp-l">Viewport</span>
+    <div class="seg" role="group" aria-labelledby="vp-l">
+      <button type="button" data-vp="mobile" aria-pressed="true">Mobile</button>
+      <button type="button" data-vp="tablet" aria-pressed="false">Tablet</button>
+      <button type="button" data-vp="desktop" aria-pressed="false">Desktop</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="ev-l">Event</span>
+    <div class="seg" role="group" aria-labelledby="ev-l">
+      <button type="button" data-ev="solo-dance" aria-pressed="true">Solo Dance</button>
+      <button type="button" data-ev="group-dance" aria-pressed="false">Group Dance 5–8</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="pay-l">Fees</span>
+    <div class="seg" role="group" aria-labelledby="pay-l">
+      <button type="button" data-pay="unknown" aria-pressed="true">Unknown (real)</button>
+      <button type="button" data-pay="apply" aria-pressed="false">If fees apply</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="an-l">Notes</span>
+    <div class="seg" role="group" aria-labelledby="an-l">
+      <button type="button" id="anno-toggle" aria-pressed="false">Annotations</button>
+    </div>
+  </div>
+</header>
+
+<p class="note-banner"><strong>Reading this:</strong> registration is prototyped under an assumed <em>Registration Open</em> season — the only way to test it. The real season today is Announcement. Red annotation blocks are <strong>open questions this round discovered</strong>; blue are design notes. Turn on Annotations to see both.</p>
+
+<div class="stage">
+  <div class="frame mobile" id="frame">
+    <span class="frame-tag" id="frame-tag">Mobile · 390px</span>
+    <div id="screen"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var EV = {
+    "solo-dance":{n:"Solo Dance",c:"Stage",team:"Solo",min:1,max:1,time:"3–5 min",
+      rules:["The track must be brought on a pen drive.","The performance must be decent and graceful."]},
+    "group-dance":{n:"Group Dance",c:"Stage",team:"5–8 members",min:5,max:8,time:"5 min",
+      rules:["Groups of 5 to 8 participants.","The track must be brought on a pen drive.",
+             "Vulgar music is not permitted.","A maximum of 2 teams per class."]}
+  };
+
+  var st = {
+    screen:"handoff", ev:"solo-dance", pay:"unknown",
+    data:{name:"",school:"",cls:"",contact:"",members:[]},
+    agreed:false, errors:{}, showErr:false, draft:null, ref:null
+  };
+
+  var frame=document.getElementById("frame"), tag=document.getElementById("frame-tag"), out=document.getElementById("screen");
+  function e(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function ev(){return EV[st.ev];}
+  function isTeam(){return ev().max>1;}
+  function anno(t,b){return '<div class="anno"><b>'+e(t)+'</b>'+b+'</div>';}
+  function flag(t,b){return '<div class="flag"><b>'+e(t)+'</b>'+b+'</div>';}
+
+  function head(){return '<a class="skip" href="#main">Skip to main content</a>'+
+    '<div class="site-head"><span class="logo">EVOKE 2K26</span>'+
+    '<span style="font-size:.72rem;color:var(--mid)">Registration</span></div>';}
+  function foot(){return '<div class="site-foot">EVOKE 2K26 · Host school <span class="tbd">TBD</span></div>';}
+
+  var STEPS=["Declare intent","Your details","Agreements","Review & confirm"];
+  function stepBar(n){
+    var total = st.pay==="apply" ? 5 : 4;
+    var bits="";
+    for(var i=1;i<=4;i++) bits+='<span class="step '+(i<n?"done":i===n?"now":"")+'"></span>';
+    if(st.pay==="apply") bits+='<span class="step '+(n>4?"done":"")+'"></span>';
+    else bits+='<span class="step maybe" title="Payment step exists only if fees apply"></span>';
+    var lbl = st.pay==="apply"
+      ? "Step "+n+" of 5"
+      : "Step "+n+" of 4, plus payment if fees apply";
+    return '<div class="steps" role="img" aria-label="'+e(lbl)+'">'+bits+'</div>'+
+           '<p class="steplabel">'+e(lbl)+'</p>';
+  }
+
+  /* ---------- P-04 handoff ---------- */
+  function handoff(){
+    var v=ev();
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-04 Zone G · Decision</span>'+
+      '<p style="font-size:.72rem;color:var(--mid);margin:0 0 4px;font-family:ui-monospace,monospace">'+e(v.c)+' · '+e(v.team)+'</p>'+
+      '<h1 style="font-size:1.3rem;margin:0 0 10px">'+e(v.n)+'</h1>'+
+      '<button class="cta" data-go="s1">Register for this event</button>'+
+      '<p style="font-size:.76rem;color:var(--mid);margin:4px 0 0">Round 1 built the rest of this screen. This is only the handoff into registration.</p>'+
+      anno("The doorway","Registration always starts from event intent — never from the dashboard or nav (Phase 3 Part 2.8, forbidden paths).")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-06 declare intent ---------- */
+  function s1(){
+    var v=ev();
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-06 Zone A · Step declaration</span>'+stepBar(1)+
+      '<div class="declared"><strong style="font-size:.82rem">What we will ask you</strong>'+
+      '<ol><li>Your details — name, school, class, one contact</li>'+
+      (isTeam()?'<li>Your team roster — '+e(v.team)+'</li>':'')+
+      '<li>Agreement to the event rules</li><li>A review of everything before you commit</li>'+
+      (st.pay==="apply"?'<li>Payment <span class="tbd">amount TBD</span></li>'
+                       :'<li>Payment — <span class="tbd">only if fees apply; not yet known</span></li>')+
+      '</ol></div>'+
+      flag("Open question F8 — the step count is unknowable",
+        "Phase 3 §9 promises the participant a declared number of steps. We cannot honestly say “4 steps” or “5 steps” while it is unknown whether a payment step exists at all. This prototype says <em>“Step 1 of 4, plus payment if fees apply”</em> and draws the fifth marker dashed. Proposed as Phase 3 <strong>Amendment A5</strong>.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-06 Zone B · Intent restatement</span>'+
+      '<dl class="summary">'+
+       '<div class="srow"><dt>Event</dt><dd>'+e(v.n)+'</dd></div>'+
+       '<div class="srow"><dt>Format</dt><dd>'+e(v.team)+'</dd></div>'+
+       '<div class="srow"><dt>Time limit</dt><dd>'+e(v.time)+'</dd></div>'+
+       '<div class="srow"><dt>Entry fee</dt><dd><span class="tbd">TBD — organizer</span></dd></div>'+
+       '<div class="srow"><dt>Who may enter</dt><dd><span class="tbd">Eligibility TBD — Q5</span></dd></div>'+
+      '</dl>'+
+      anno("Restatement before collection","Nothing is asked until the choice is restated (Phase 2 Part 10.2). The fee line is present and honest rather than absent — an absent fee reads as free.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">Actions</span><div class="actions">'+
+      '<button class="cta" data-go="s2">Continue</button>'+
+      '<button class="cta secondary" data-go="handoff">Back to event</button></div>'+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-07 participant info ---------- */
+  function fieldHTML(id,label,hint,type,val,opts){
+    var bad = st.showErr && st.errors[id];
+    return '<div class="field'+(bad?" bad":"")+'">'+
+      '<label for="'+id+'">'+e(label)+' <span class="req">required</span></label>'+
+      (hint?'<p class="hint" id="'+id+'-h">'+hint+'</p>':'')+
+      (opts
+        ? '<select id="'+id+'" data-f="'+id+'" aria-required="true" aria-invalid="'+(bad?"true":"false")+'"'+
+          (hint?' aria-describedby="'+id+'-h'+(bad?" "+id+"-e":"")+'"':(bad?' aria-describedby="'+id+'-e"':''))+'>'+
+          opts.map(function(o){return '<option value="'+e(o[0])+'"'+(val===o[0]?" selected":"")+'>'+e(o[1])+'</option>';}).join('')+
+          '</select>'
+        : '<input id="'+id+'" data-f="'+id+'" type="'+type+'" value="'+e(val)+'" aria-required="true" aria-invalid="'+(bad?"true":"false")+'"'+
+          (hint?' aria-describedby="'+id+'-h'+(bad?" "+id+"-e":"")+'"':(bad?' aria-describedby="'+id+'-e"':''))+'>')+
+      (bad?'<span class="err" id="'+id+'-e">'+e(st.errors[id])+'</span>':'')+
+    '</div>';
+  }
+
+  function s2(){
+    var v=ev(), d=st.data;
+    if(isTeam() && d.members.length===0){
+      for(var i=0;i<v.min;i++) d.members.push({name:"",cls:""});
+    }
+    var errCount = Object.keys(st.errors).length;
+    var sum = (st.showErr && errCount)
+      ? '<div class="errsum" role="alert"><strong>'+errCount+' '+(errCount===1?"field needs":"fields need")+' your attention</strong><ul>'+
+        Object.keys(st.errors).map(function(k){return '<li>'+e(st.errors[k])+'</li>';}).join('')+'</ul></div>'
+      : '';
+
+    var roster = "";
+    if(isTeam()){
+      roster = '<div class="zone"><span class="zlabel">P-07 · Team roster</span>'+
+        '<p class="roster-meta">This event needs <strong>'+e(v.team)+'</strong>. You have '+d.members.length+'.</p>'+
+        d.members.map(function(m,i){
+          var bad1=st.showErr&&st.errors["m"+i+"n"], bad2=st.showErr&&st.errors["m"+i+"c"];
+          return '<div class="member"><h4>Member '+(i+1)+(i===0?' — you':'')+
+            (d.members.length>v.min&&i>0?'<button class="rm" data-rm="'+i+'">Remove</button>':'')+'</h4>'+
+            '<div class="field'+(bad1?" bad":"")+'"><label for="m'+i+'n">Full name <span class="req">required</span></label>'+
+            '<input id="m'+i+'n" data-m="'+i+'" data-mf="name" value="'+e(m.name)+'" aria-required="true" aria-invalid="'+(bad1?"true":"false")+'">'+
+            (bad1?'<span class="err">'+e(st.errors["m"+i+"n"])+'</span>':'')+'</div>'+
+            '<div class="field'+(bad2?" bad":"")+'"><label for="m'+i+'c">Class <span class="req">required</span></label>'+
+            '<input id="m'+i+'c" data-m="'+i+'" data-mf="cls" value="'+e(m.cls)+'" aria-required="true" aria-invalid="'+(bad2?"true":"false")+'">'+
+            (bad2?'<span class="err">'+e(st.errors["m"+i+"c"])+'</span>':'')+'</div></div>';
+        }).join('')+
+        (d.members.length<v.max
+          ? '<button class="cta secondary" data-add="1">Add member ('+d.members.length+' of up to '+v.max+')</button>'
+          : '<p class="roster-meta">Maximum of '+v.max+' members reached.</p>')+
+        flag("Open question F9 — is the person registering also a participant?",
+          "Member 1 is labelled “you”, which assumes a student registering themselves. Phase 0 §2.2 documents a coordinator registering teams — a coordinator is not a participant, so for them this roster is wrong by one person. Phase 0 <strong>Q4</strong> (who registers: school or individual) is unanswered, so this cannot be resolved by design. Blocked on the organizer.")+
+        anno("Roster density","At the maximum of 8 members this screen carries 16 roster inputs plus 4 of your own — 20 fields on a phone. Recorded as finding F10.")+
+      '</div>';
+    }
+
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-07 Zone A · Step</span>'+stepBar(2)+'</div>'+
+     '<div class="zone"><span class="zlabel">P-07 Zone B · Your details</span>'+sum+
+      fieldHTML("name","Full name","",'text',d.name)+
+      fieldHTML("school","School",'Schools list <span class="tbd">TBD — organizer</span>','text',d.school)+
+      fieldHTML("cls","Class / grade",'Eligible classes <span class="tbd">TBD — Q5</span>','text',d.cls)+
+      fieldHTML("contact","Email or phone",'One contact. We use it to reach you about your registration.','text',d.contact)+
+      anno("Fields are architecture-derived, not invented",
+        "Exactly the five fields in Phase 3 §9.A: name, school, class, one contact, plus the roster for team events. No guardian field — Phase 3 §9.A says it appears only if the organizer requires it. The <em>values</em> behind school and class are TBD; the fields themselves are not.")+
+     '</div>'+ roster +
+     '<div class="zone"><span class="zlabel">Actions</span><div class="actions">'+
+      '<button class="cta" data-go="s3">Continue</button>'+
+      '<button class="cta secondary" data-go="s1">Back</button>'+
+      '<button class="cta secondary" data-pause="1">Pause &amp; save</button></div>'+
+      anno("Pause &amp; save","Returns to the event page, not the homepage — the participant was reading rules there and may want them again (Phase 3 §9.F).")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-08 agreements ---------- */
+  function s3(){
+    var v=ev();
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-08 Zone A · Step</span>'+stepBar(3)+'</div>'+
+     '<div class="zone"><span class="zlabel">P-08 Zone B · What you are agreeing to</span>'+
+      '<ol class="rules">'+v.rules.map(function(r){return '<li>'+e(r)+'</li>';}).join('')+
+      '<li>Original work only — copying leads to disqualification.</li>'+
+      '<li>The judges’ decision is final.</li></ol>'+
+      '<p style="font-size:.78rem;margin:12px 0 0"><button class="linkish" data-go="handoff">Read the full rules again</button></p>'+
+      '<div class="field" style="margin-top:14px">'+
+        '<label style="display:flex;gap:9px;align-items:flex-start;font-weight:400;font-size:.86rem">'+
+        '<input type="checkbox" id="agree" style="width:22px;height:22px;min-height:22px;flex:none;margin-top:2px"'+(st.agreed?" checked":"")+'>'+
+        '<span>I have read and understood the rules above.</span></label></div>'+
+      anno("Not pre-checked","Phase 2 §15.4: no hidden terms. The continue button stays disabled with a written reason until this is ticked (Blacklist #57).")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">Actions</span><div class="actions">'+
+      '<button class="cta" data-go="s4"'+(st.agreed?"":" disabled")+'>I understand. Continue.</button>'+
+      (st.agreed?"":'<p style="font-size:.76rem;color:var(--mid);margin:0 0 8px">Tick the box above to continue.</p>')+
+      '<button class="cta secondary" data-go="s2">Back</button></div>'+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-09 review ---------- */
+  function s4(){
+    var v=ev(), d=st.data;
+    var rosterRow = isTeam()
+      ? '<div class="srow"><dt>Team</dt><dd>'+d.members.map(function(m,i){return e(m.name||"—")+' ('+e(m.cls||"—")+')';}).join('<br>')+
+        '<div class="edit"><button class="linkish" data-go="s2">Edit</button></div></dd></div>' : '';
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-09 Zone A · Step</span>'+stepBar(4)+'</div>'+
+     '<div class="zone"><span class="zlabel">P-09 Zone B · Everything, before you commit</span>'+
+      '<p style="font-size:.9rem;margin:0 0 11px">You’re registering for <strong>'+e(v.n)+'</strong> as '+
+      (isTeam()?'a team of '+d.members.length:'a solo entrant')+' from <strong>'+e(d.school||"—")+'</strong>.</p>'+
+      '<dl class="summary">'+
+       '<div class="srow"><dt>Event</dt><dd>'+e(v.n)+' · '+e(v.time)+'<div class="edit"><button class="linkish" data-go="s1">Edit</button></div></dd></div>'+
+       '<div class="srow"><dt>Your name</dt><dd>'+e(d.name||"—")+'<div class="edit"><button class="linkish" data-go="s2">Edit</button></div></dd></div>'+
+       '<div class="srow"><dt>School / class</dt><dd>'+e(d.school||"—")+' · '+e(d.cls||"—")+'<div class="edit"><button class="linkish" data-go="s2">Edit</button></div></dd></div>'+
+       '<div class="srow"><dt>Contact</dt><dd>'+e(d.contact||"—")+'<div class="edit"><button class="linkish" data-go="s2">Edit</button></div></dd></div>'+
+       rosterRow+
+       '<div class="srow"><dt>Agreements</dt><dd>Accepted<div class="edit"><button class="linkish" data-go="s3">Edit</button></div></dd></div>'+
+       '<div class="srow"><dt>Amount due</dt><dd>'+(st.pay==="apply"
+          ? '<span class="tbd">[AMOUNT] — from organizer</span>'
+          : '<span class="tbd">Not known. If a fee applies you will see it before paying.</span>')+'</dd></div>'+
+      '</dl>'+
+      anno("The amount is stated before commitment","Money is named at review and transacted at the next step — never the reverse (Phase 3 §9.A as corrected; Phase 2 §15.4).")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">Actions</span><div class="actions">'+
+      '<button class="cta" data-go="'+(st.pay==="apply"?"s5":"confirm")+'">Confirm registration</button>'+
+      '<button class="cta secondary" data-go="s2">Edit details</button>'+
+      '<button class="cta secondary" data-go="handoff">Cancel</button></div>'+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-10 payment placeholder ---------- */
+  function s5(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-10 Zone A · Step</span>'+stepBar(5)+'</div>'+
+     '<div class="zone"><span class="zlabel">P-10 Zone B · Payment</span>'+
+      '<dl class="summary">'+
+       '<div class="srow"><dt>Amount</dt><dd><span class="tbd">[AMOUNT]</span></dd></div>'+
+       '<div class="srow"><dt>Method</dt><dd><span class="tbd">[PAYMENT METHODS — organizer]</span></dd></div>'+
+      '</dl>'+
+      '<p style="font-size:.84rem;margin:11px 0">You will not be charged twice. If a payment fails, nothing is taken and your registration is kept.</p>'+
+      '<div class="actions">'+
+      '<button class="cta" data-go="confirm">Pay and complete</button>'+
+      '<button class="cta secondary" data-go="s4">Back to review</button></div>'+
+      anno("Structure only","No gateway, amount, method or refund rule is invented. The literal <span class=\\"tbd\\">[AMOUNT]</span> tokens are the point: this screen proves a real payment step can drop in without the flow changing shape.")+
+      flag("Open question F11 — this screen cannot be finished by design",
+        "Failure, pending and retry behaviour depend entirely on the gateway. Round 4 (system states) cannot complete the payment states either. This stays structural until the organizer supplies payment facts.")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-11 confirmation ---------- */
+  function confirm(){
+    var v=ev(), d=st.data;
+    if(!st.ref) st.ref = "EVOKE-2K26-"+(1000+Math.floor(((d.name||"x").length*37+d.members.length*11)%9000));
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-11 Zone A · The stamp</span>'+
+      '<div class="stamp"><p class="big">You’re registered.</p>'+
+      '<p style="margin:0 0 8px;font-size:.9rem">'+e(v.n)+' — '+(isTeam()?'team of '+d.members.length:'solo')+'</p>'+
+      '<p class="ref">Reference '+e(st.ref)+'</p></div>'+
+      anno("The verdict gesture","Phase 1.5 Part 6.4 — the Stamp. At wireframe fidelity it is a double rule; Phase 5 designs the gesture itself.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-11 Zone B · What happens next</span>'+
+      '<ul class="rules"><li>Keep your reference number.</li>'+
+      '<li>Bring what the event requires — check the event page before the day.</li>'+
+      '<li>Dates, venue and schedule: <span class="tbd">announced by the organizer</span>.</li></ul>'+
+      flag("Open question F12 — retrieval has no mechanism yet",
+        "The receipt must be retrievable later (Phase 2.5 invariant 2.4), but the only route is Your Space, which needs an account, and the auth model (C6) is unresolved. Today the reference number is the entire retrieval story. Blocked on the auth decision.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-11 Zone C · Actions</span><div class="actions">'+
+      '<button class="cta" data-go="space">Go to Your Space</button>'+
+      '<button class="cta secondary" data-go="handoff">Register another event</button></div>'+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- P-12 / P-13 Your Space ---------- */
+  function space(){
+    var v=ev(), d=st.data;
+    if(!st.ref) return spaceEmpty();
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-12 Zone A · What changed</span>'+
+      '<div class="delta"><strong style="font-size:.9rem">Since your last visit</strong>'+
+      '<p style="margin:5px 0 0;font-size:.85rem">Nothing new yet. We will tell you here when dates, venue or your schedule are announced.</p></div>'+
+      anno("Honest delta","The dashboard's reason to exist is “what changed?” (Phase 2 Part 8.3). With no announcements yet it says so plainly rather than padding the screen.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-12 Zone B · Your registrations</span>'+
+      '<div class="card"><h4>'+e(v.n)+'</h4>'+
+      '<p class="meta">'+(isTeam()?'Team of '+d.members.length:'Solo')+' · Reference '+e(st.ref)+'<br>'+
+      'Status: registered'+(st.pay==="apply"?' · payment <span class="tbd">TBD</span>':'')+'</p></div>'+
+      '<button class="cta secondary" data-go="handoff">Register another event</button>'+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-12 Zone C · Announcements</span>'+
+      '<p style="font-size:.85rem;color:var(--mid);margin:0">No announcements yet.</p>'+
+      anno("Quiet, not broken","An empty announcements list is a real state, not an error (Phase 3 §12.B M4).")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">Out of Round 2 scope</span>'+
+      '<p style="font-size:.8rem;color:var(--mid);margin:0">Schedule and announcements content: Round 3. System states: Round 4.</p>'+
+     '</div></main>'+foot();
+  }
+  function spaceEmpty(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-13 · Waiting slip</span>'+
+      '<div class="empty">This slip is waiting for your name.<br><br>'+
+      '<button class="cta" data-go="handoff">Find an event</button></div>'+
+      anno("Named exception","Phase 1.5 §11.1.6 — the waiting slip. Negative space is the message: an invitation, not a dead end.")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- resume ---------- */
+  function resume(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">Returning visitor</span>'+
+      '<h1 style="font-size:1.1rem;margin:0 0 8px">Pick up where you left off?</h1>'+
+      '<p style="font-size:.88rem">You started registering for <strong>'+e(EV[st.draft.ev].n)+'</strong> and stopped at step '+st.draft.step+'.</p>'+
+      '<div class="actions"><button class="cta" data-resume="1">Resume</button>'+
+      '<button class="cta secondary" data-fresh="1">Start over</button></div>'+
+      anno("Nothing lost","Phase 3 §9.F. An interrupted registration is “returning later”, never “failed” (Phase 2 Part 14).")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------- validation ---------- */
+  function validate(){
+    var d=st.data, er={};
+    if(!d.name.trim()) er.name="Enter your full name.";
+    if(!d.school.trim()) er.school="Enter your school.";
+    if(!d.cls.trim()) er.cls="Enter your class.";
+    if(!d.contact.trim()) er.contact="Enter an email address or phone number.";
+    if(isTeam()) d.members.forEach(function(m,i){
+      if(!m.name.trim()) er["m"+i+"n"]="Member "+(i+1)+": enter a name.";
+      if(!m.cls.trim()) er["m"+i+"c"]="Member "+(i+1)+": enter a class.";
+    });
+    st.errors=er; return Object.keys(er).length===0;
+  }
+
+  var VIEWS={handoff:handoff,s1:s1,s2:s2,s3:s3,s4:s4,s5:s5,confirm:confirm,space:space,resume:resume};
+  function render(){
+    out.innerHTML = VIEWS[st.screen]();
+    var h=out.querySelector("h1,.stamp .big"); if(h) h.setAttribute("tabindex","-1");
+  }
+
+  out.addEventListener("input", function(e2){
+    var t=e2.target;
+    if(t.dataset.f) st.data[t.dataset.f]=t.value;
+    if(t.dataset.m!==undefined && t.dataset.mf) st.data.members[+t.dataset.m][t.dataset.mf]=t.value;
+    if(t.id==="agree"){ st.agreed=t.checked; render(); }
+  });
+
+  document.addEventListener("click", function(e2){
+    var t=e2.target.closest("[data-go],[data-vp],[data-ev],[data-pay],[data-add],[data-rm],[data-pause],[data-resume],[data-fresh],#anno-toggle");
+    if(!t) return;
+
+    if(t.dataset.vp){ frame.className="frame "+t.dataset.vp;
+      tag.textContent={mobile:"Mobile · 390px",tablet:"Tablet · 768px",desktop:"Desktop · 1180px"}[t.dataset.vp];
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); return; }
+    if(t.dataset.ev){ st.ev=t.dataset.ev; st.data.members=[]; st.ref=null; st.screen="handoff";
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); render(); return; }
+    if(t.dataset.pay){ st.pay=t.dataset.pay;
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); render(); return; }
+    if(t.id==="anno-toggle"){ var on=document.body.classList.toggle("show-anno"); t.setAttribute("aria-pressed",String(on)); return; }
+
+    e2.preventDefault();
+    if(t.dataset.add){ st.data.members.push({name:"",cls:""}); render(); return; }
+    if(t.dataset.rm){ st.data.members.splice(+t.dataset.rm,1); render(); return; }
+    if(t.dataset.pause){ st.draft={ev:st.ev,step:2}; st.screen="resume"; render(); return; }
+    if(t.dataset.resume){ st.screen="s2"; render(); return; }
+    if(t.dataset.fresh){ st.data={name:"",school:"",cls:"",contact:"",members:[]}; st.agreed=false;
+      st.draft=null; st.screen="s1"; render(); return; }
+
+    var go=t.dataset.go;
+    if(go==="s3" && st.screen==="s2"){
+      st.showErr=true;
+      if(!validate()){ render();
+        var first=out.querySelector('[aria-invalid="true"]'); if(first) first.focus(); return; }
+      st.showErr=false;
+    }
+    st.screen=go; render();
+    var h=out.querySelector("h1"); if(h) h.focus();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

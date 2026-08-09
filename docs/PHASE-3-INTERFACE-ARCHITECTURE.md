@@ -26,6 +26,7 @@ This specification is a hypothesis until it meets real content. Where a Phase 4 
 | **A2** | 2026-08-09 | **The "4 clusters × 4 events" model is withdrawn.** Cluster sizes are uneven and the layout must absorb that. Choice reduction comes from *naming* four groups, not from their being equal. A fixed 2×2 cluster grid is no longer specified. | Phase 4 Round 1 | §3 (P-03 blueprint), §6.B |
 | **A3** | 2026-08-09 | **Zone E is adaptive, not fixed two-column.** Judging criteria exist in the source for only 6 of 16 events. Two columns appear only when both blocks have content; an empty second column is forbidden, because a hollow box implies withheld information. Criteria are never fabricated to fill it. | Phase 4 Round 1 | §3 (P-04 blueprint), §6.D, §5.4, §5.6 |
 | **A4** | 2026-08-09 | **Text search re-evaluated against real content and still rejected** for the curated 16-event catalogue. Re-opened only if the catalogue grows substantially. | Phase 4 Round 1 | §10.A |
+| **A5** | 2026-08-09 | **The declared step count is conditional, and must be worded as such.** §9 promises the participant a declared number of steps, and C-05 was specified to support "4 or 5". But whether a payment step exists at all is unknown (Charter §7), so neither "4 steps" nor "5 steps" can be stated honestly today. The declaration is therefore **"Step N of 4, plus payment if fees apply"**, with the conditional step shown as a distinct, visibly provisional marker. When fees are resolved the wording collapses to a fixed count with no structural change. | Phase 4 Round 2 | §9.A, §9.D, Part 4 C-05 |
 
 **Not amended:** the cluster concept itself, which real content supports. Phase 0 §3.4 always recorded the true distribution — the 4×4 error was introduced at Phase 3, not inherited.
 
@@ -1812,7 +1813,7 @@ Every interface component the platform requires. Grouped into nine categories. E
 | **Replaceable?** | Text-only progress ("Step 2 of 4") is equivalent but adds cognitive load without visual cue. The indicator is a visual progress signal, not a text instruction. |
 | **Composition** | Dot/step indicator × N (4 or 5) / Optional step labels / Connecting line (current → future). |
 | **Accessibility** | `role="progressbar"` or `aria-valuetext="Step 2 of 4"`. Screen reader announces step position on focus. |
-| **Placeholder awareness** | Step count depends on whether payment is required (TBD - P-10 may or may not exist). Component supports 4 or 5 steps. |
+| **Placeholder awareness** | Step count depends on whether payment is required (TBD - P-10 may or may not exist). Component supports 4 or 5 steps **and a conditional fifth marker** for the state where fee existence itself is unknown (Amendment A5). It must never assert a total it cannot support. |
 
 ---
 
@@ -3840,7 +3841,7 @@ Six steps map to screens P-06 through P-11, in this fixed order: Declare Intent 
 | Cluster tag | Label (read-only) | - | Derived from event (B2) | Category context - reinforces the world they chose | Phase 0 §4.17 |
 | Team format | Display text (read-only) | - | B4 team size (e.g., "Solo" / "Team of 2-4") | Removes ambiguity about whether they need teammates | Phase 2 Part 10.1 |
 | Time limit | Display text (read-only) | - | B4 time limit (e.g., "Max 2 minutes") | Last certainty-check before commitment | Phase 2 Part 10.1 |
-| Steps ahead | Visual indicator (C-05) | - | System (4 or 5 steps total) | "Here is what you'll be asked" - progressive disclosure at the doorway (Phase 2 Part 10.3) | Phase 2 Part 10.3; Charter §5 |
+| Steps ahead | Visual indicator (C-05) | - | System (4 steps, plus payment if fees apply - see Amendment A5) | "Here is what you'll be asked" - progressive disclosure at the doorway (Phase 2 Part 10.3). The count is stated conditionally while fees remain unknown; a fixed number would be an invented fact. | Phase 2 Part 10.3; Charter §5; Amendment A5 |
 | Requirements summary | Display text (read-only) | - | B12 (if any special requirements exist) | Final eligibility signal | Phase 0 §2.1 |
 
 **Interaction:**

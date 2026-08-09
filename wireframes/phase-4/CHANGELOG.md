@@ -1,4 +1,25 @@
-# Phase 4 · Round 1 — prototype changelog
+# Phase 4 — prototype changelog
+
+Rounds are versioned independently. `round-1.html` is at v1; `round-2.html` is at v0.
+
+---
+
+## Round 2 · v0 — 2026-08-09
+
+First build of the commitment path: registration → payment placeholder → confirmation → Your Space, tested against Solo Dance (solo) and Group Dance (5–8 members).
+
+| Built this way | Why |
+|---|---|
+| Step count declared as "Step N of 4, plus payment if fees apply" | Building it exposed that neither "4 steps" nor "5 steps" can be stated honestly while fee existence is unknown. Fixed in the architecture first → **Amendment A5**, then in the prototype. |
+| Roster Member 1 labelled "you" | The least-assuming reading. Whether the registrant is also a participant is genuinely unresolved (Phase 0 Q4) — flagged in place rather than resolved by invention. |
+| `[AMOUNT]` shown as a literal token | Keeps the gap visible and machine-searchable. A plausible-looking number "for demo purposes" is exactly the failure mode the placeholder strategy exists to prevent. |
+| Error summary moved above the form | Found during the accessibility pass: it was rendering after the fields, so a screen-reader user met the errors before the summary explaining them. |
+
+**Not built:** any gateway, amount, method, refund rule, deadline, or auth mechanism. Three high-severity gaps (F9 registrant-vs-participant, F11 payment states, F12 receipt retrieval) are recorded as blocked on decisions, not designed around.
+
+---
+
+## Round 1 — prototype changelog
 
 These prototypes are **iteration artifacts, not deliverables**. No version is "final". What matters here is not the preserved bytes of any one version — git holds those — but the recorded reason each version stopped being right.
 
