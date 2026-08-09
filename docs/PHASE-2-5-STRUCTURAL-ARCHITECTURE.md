@@ -7,7 +7,7 @@
 | **Project** | EVOKE 2K26 — Participant & Registration Platform (Inter-School Festival) |
 | **Phase** | 2.5 — Structural Architecture / Information Architecture Validation (NOT UI design, NOT wireframing, NOT coding) |
 | **Documents in force** | Phase 0 Discovery · Phase 1 Brand Bible · Phase 1.5 Creative Review + Appendix A · Phase 1.75 Product Charter · Phase 2 Experience Direction (all immutable) |
-| **Status** | Draft for review — approval gates Phase 3 (Wireframe Architecture) |
+| **Status** | Draft for review — approval gates Phase 3 (Interface Architecture) |
 | **Role** | Systems Architect · Information Architect · Product Architect · Service Designer · UX Auditor · Technical Product Manager · Experience Reviewer · Product Strategist |
 
 > This phase does **not** design. It **validates**. Every future page, section, interaction, navigation path, piece of content, and user decision must already have a justified place — traceable to the five constitutions. Nothing unnecessary survives this phase; nothing important is missing.
@@ -17,6 +17,8 @@
 > **The One Last Rule (this phase's reading):** nothing exists because it looks good. Everything exists because it improves **clarity, confidence, trust, or progress**.
 >
 > **After approval, documentation stops leading. Implementation begins.**
+
+> **Roadmap note:** phase numbering in this document predates the canonical roadmap in `docs/ROADMAP.md`. Where this document's forward-references to later phases disagree with that table, `docs/ROADMAP.md` wins. In current terms: Phase 2.5 is Structural Architecture, Phase 3 is Interface Architecture, and Phase 4 is Visual & Motion Design. There is no separate wireframe phase.
 
 ---
 
@@ -102,7 +104,9 @@ Every content object the platform requires, with its justification. Status codes
 | G2 | Edition key (2K26 → 2K27…) | Annual reuse without redesign (Phase 0 5.2.12, 12.13) | Organizers | Always | M (structural) |
 | G3 | Entry-state (Google / QR / direct / social / registered) | Every entry is a different emotional state (Phase 2 Part 12.1) | The platform itself | On arrival | M (structural) |
 
-**Inventory audit verdict:** 46 objects; 25 mandatory, 1 optional-free (none used), 15 placeholder, 5 future. Nothing present lacks a Phase 0/Phase 2 trace. No object was found that fails the Golden Question.
+**Inventory audit verdict:** **43 objects** — A1–A8 (8), B1–B12 (12), C1–C7 (7), D1–D6 (6), E1–E3 (3), F1–F4 (4), G1–G3 (3). By status: **24 mandatory (M), 13 placeholder (P), 6 future (F), 0 optional (O)** — the optional category was defined but never used, which is itself a result: nothing survived that was merely nice to have. Nothing present lacks a Phase 0/Phase 2 trace. No object was found that fails the Golden Question.
+
+*Count note: an earlier draft of this verdict stated 46 objects (25 M / 15 P / 5 F). Both the total and the status split were wrong — the tables above contain 43 objects and the status figures did not sum. The figures here are counted directly from the tables and are canonical; downstream documents citing "46 content objects" have been corrected.*
 
 **Trace:** Phase 0 §3.1, §6.1–6.2, §10; Phase 2 Parts 3, 9, 10, 12, 15, 18–21; Charter §7.
 
@@ -676,7 +680,7 @@ The architecture must survive three realistic growth axes without redesign (Phas
 
 ## PART 13 — Developer Handoff (pre-wireframe knowledge base)
 
-What a developer must know *before* Phase 3 (wireframes) — so that no assumption is imported from outside the constitutions. Intended stack (Charter §6): HTML, CSS, JavaScript, Python, Supabase.
+What a developer must know *before* Phase 3 (Interface Architecture) — so that no assumption is imported from outside the constitutions. Intended stack (`docs/ROADMAP.md` — *not* Charter §6, which is the 4-question decision filter): HTML, CSS, JavaScript, Python, Supabase.
 
 ### 13.1 The knowledge package (all settled here, not by the developer)
 
@@ -690,7 +694,7 @@ What a developer must know *before* Phase 3 (wireframes) — so that no assumpti
 | Placeholders | Value-independent structure (Part 11); postures over fake values. |
 | Data model | Content objects = inventory A–G (Part 1); relationships = ownership map (5.1); admin export (F2). |
 | Errors | Recovery routes (10.2), never error-dead-ends (Part 14 Phase 2). |
-| Stack | HTML/CSS/JS (front), Python (logic/backend), Supabase (data/auth — admin at minimum) — per Charter §6. |
+| Stack | HTML/CSS/JS (front), Python (logic/backend), Supabase (data/auth — admin at minimum) — per `docs/ROADMAP.md`. |
 
 ### 13.2 Explicit non-assumptions (the developer must NOT assume)
 
@@ -712,7 +716,7 @@ What a developer must know *before* Phase 3 (wireframes) — so that no assumpti
 
 **Handoff verdict:** a developer holding only this document + the constitutions has everything needed to start Phase 3 without inventing a single value.
 
-**Trace:** Charter §6; Phase 0 Q21, risk 9; Phase 2 Part 14.
+**Trace:** `docs/ROADMAP.md` (stack); Phase 0 Q21, risk 9; Phase 2 Part 14.
 
 ---
 
@@ -732,7 +736,7 @@ The constitution-owner (human + ChatGPT) reviews the structural architecture bef
 
 - Owner reads Parts 1–13 once, in order, against the five constitutions.
 - Any "no" → the offending structure is named, removed or re-justified in writing, and this phase is re-committed (not silently amended).
-- All "yes" → the Readiness Report (Part 15) is signed and Phase 3 (Wireframe Architecture) may begin.
+- All "yes" → the Readiness Report (Part 15) is signed and Phase 3 (Interface Architecture) may begin.
 
 ---
 
@@ -742,7 +746,7 @@ The constitution-owner (human + ChatGPT) reviews the structural architecture bef
 
 | Part | Verdict | Evidence |
 |---|---|---|
-| 1 Master Content Inventory | PASS | 46 objects, every one traced; no orphan, no unjustified |
+| 1 Master Content Inventory | PASS | 43 objects (24 M / 13 P / 6 F), every one traced; no orphan, no unjustified |
 | 2 Product Structure | PASS | 12 areas, 8-item structural blacklist, thin-shell stable under TBD (2.5) |
 | 3 Page Contracts | PASS | 11 contracts with purposes, audiences, states, exits |
 | 4 Section Contracts | PASS | 28 sections: 21 kept / 7 removed-or-absorbed, each with a named problem |
@@ -759,7 +763,7 @@ The constitution-owner (human + ChatGPT) reviews the structural architecture bef
 
 ### 15.2 The verdict this phase asks of the owner
 
-**Is the structural architecture ready for Phase 3 (Wireframe Architecture)?**
+**Is the structural architecture ready for Phase 3 (Interface Architecture)?**
 
 - Recommended answer: **YES** — with evidence: 13/14 parts PASS with trace to constitutions; the 14th (Gatekeeper Review) is the owner's signature, and the only open items are TBD facts that the architecture is built to survive (Part 11.4).
 - **NO** — would be returned with the naming of the offending structure (review protocol, Part 14).
@@ -768,4 +772,4 @@ The constitution-owner (human + ChatGPT) reviews the structural architecture bef
 
 The single most important outcome of this phase is not what the platform *contains*, but what it *does not*: no promotional banners, no news blog, no login walls, no fake values, no dead ends, no duplicated facts, no unearned pages. What remains is a thin, honest, confident structure — the exact shape the participant journey promised in Phase 2.
 
-*End of Phase 2.5 — Structural Architecture. On approval, Phase 3 (Wireframe Architecture) begins with this document as its only map.*
+*End of Phase 2.5 — Structural Architecture. On approval, Phase 3 (Interface Architecture) begins with this document as its only map.*

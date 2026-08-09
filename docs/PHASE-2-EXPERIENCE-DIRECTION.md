@@ -7,7 +7,7 @@
 | **Project** | EVOKE 2K26 — Participant & Registration Platform (Inter-School Festival) |
 | **Phase** | 2 — Experience Direction (NOT UX design, NOT wireframes, NOT UI, NOT code) |
 | **Documents in force** | Phase 0 Discovery (immutable) · Phase 1 Brand Bible (immutable) · Phase 1.5 Creative Review + Appendix A (immutable) · Phase 1.75 Product Charter (immutable) |
-| **Status** | Draft for review — Phase 3 (Information Architecture Validation) and Phase 4 (Wireframes) proceed only after approval |
+| **Status** | Draft for review — Phase 2.5 (Structural Architecture) and Phase 3 (Interface Architecture) proceed only after approval |
 
 > This document answers ONE question: **How should a participant experience EVOKE?**
 >
@@ -16,6 +16,8 @@
 > **Role adopted for this phase:** Experience Director · Product Psychologist · UX Research Lead · Information Architect · Service Designer · Behavioural Designer · Narrative Designer · Human Factors Specialist · Digital Product Strategist · Creative Director.
 >
 > **Traceability law (Bible 13.24):** every decision below cites the constitution it serves. Where Phase 3 must translate an experience decision into structure, this document says so — it does not invent the structure.
+
+> **Roadmap note:** phase numbering in this document predates the canonical roadmap in `docs/ROADMAP.md`. Where this document's forward-references to later phases disagree with that table, `docs/ROADMAP.md` wins. In current terms: Phase 2.5 is Structural Architecture, Phase 3 is Interface Architecture, and Phase 4 is Visual & Motion Design. There is no separate wireframe phase.
 
 ---
 
@@ -803,7 +805,7 @@ A silence beat is a designed pause where **no new information arrives and no act
 | After a recovery | One beat of calm before the visitor re-enters (Part 14.1, Part 20.2 step 4) |
 | After the closing | The story ends in the silence where the visitor chooses to respond |
 
-### 22.3 The rules of silence
+### 23.3 The rules of silence
 
 1. **Silence has no call to action** — a silence that asks for something is not a silence.
 2. **Silence is never a dead end** — the visitor can always move on; the silence is a permission to breathe, not a barrier (Part 12.2).
@@ -829,7 +831,7 @@ This review is **run by the owner**, not by the implementing agent (per the Phas
 
 ### B.3 The gate
 
-- **Pass all five** → Phase 2.5 (Information Architecture Validation) may begin.
+- **Pass all five** → Phase 2.5 (Structural Architecture) may begin.
 - **Any failure** → the affected part is strengthened first; no wireframe work under any condition.
 
 ---
@@ -838,7 +840,7 @@ This review is **run by the owner**, not by the implementing agent (per the Phas
 
 **What this phase establishes:** the complete emotional and psychological specification of the platform — the participant story (Part 1), the narrative in five acts (Part 2), the chapter map (Part 3), the directed scroll (Part 4), the curiosity curve (Part 5), the emotional temperature (Part 6), the cognitive load rhythm (Part 7), the attention architecture (Part 8), the information release timing (Part 9), registration psychology (Part 10), the decision tree (Part 11), entry and exit strategy (Part 12), mobile-first psychology (Part 13), failure journeys (Part 14), trust architecture (Part 15), success definition (Part 16), its own critique (Part 17), and the review addendum: memory anchors (Part 18), the second/anticipation arc (Part 19), recovery (Part 20), time seasons (Part 21), human energy (Part 22), and silence (Part 23).
 
-**What it does not establish:** any layout, component, visual, typography, color, motion, or code — deliberately. Those arrive in **Phase 2.5 (Information Architecture Validation — every content unit, section, click, and interaction must justify its existence)** and **Phase 3 (Wireframes)**; wireframing must not begin until Phase 2.5 is completed (Appendix B).
+**What it does not establish:** any layout, component, visual, typography, color, motion, or code — deliberately. Those arrive in **Phase 2.5 (Structural Architecture — every content unit, section, click, and interaction must justify its existence)**, **Phase 3 (Interface Architecture)**, and **Phase 4 (Visual & Motion Design)**; no structural work may begin until Phase 2.5 is completed (Appendix B).
 
 **Open decisions for the owner:** the Phase 2 acceptance review (Appendix B) is the next owner action, then Phase 0 Q1–Q5, Q12, Q19 (dates, venue, eligibility, registration model, contact, host) and all TBD items (Charter §7) — the experience contract above holds regardless; the details slot in when official information arrives.
 

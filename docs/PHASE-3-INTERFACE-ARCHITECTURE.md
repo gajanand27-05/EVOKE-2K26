@@ -523,7 +523,7 @@ The 11 page contracts from Phase 2.5 expand into practical screens. Multi-step f
 | **Failure state** | → Network Error (P-23) |
 | **Season availability** | All |
 | **Constitutional trace** | Phase 1 §11 (loading philosophy); Phase 0 §8 (Lighthouse ≥90) |
-| **Gold**en Question** | Exists because the brand must hold even in loading (Phase 1.5 slip universality, §11.2). |
+| **Golden Question** | Exists because the brand must hold even in loading (Phase 1.5 slip universality, §11.2). |
 
 ---
 
@@ -591,7 +591,7 @@ The 11 page contracts from Phase 2.5 expand into practical screens. Multi-step f
 | **Purpose** | Edit and publish content: event rules, festival description, dates, venue, FAQ entries. The organizer's content engine. |
 | **Audience** | Organizers only |
 | **Entry states** | From Admin Dashboard |
-| **Exit stages** | → Admin Dashboard; → Preview (publish flow) |
+| **Exit states** | → Admin Dashboard; → Preview (publish flow) |
 | **Dependencies** | F1 (content management), A1-A7, B1-B12, D1-D2, E1-E3 |
 | **Primary action** | Edit/save content |
 | **Secondary actions** | Preview changes; Revert; View content version history |
@@ -683,11 +683,13 @@ The 11 page contracts from Phase 2.5 expand into practical screens. Multi-step f
 
 | Category | Count | Screens |
 |---|---|---|
-| **Primary (P)** | 23 | P-01 through P-27 |
+| **Primary (P)** | 25 | P-01 through P-27, excluding the two system overlays below |
 | **Admin (A)** | 7 | A-01 through A-07 |
 | **Future (F)** | 0 | Gallery (P-20) and Winners (P-21) are P, not F - they are structured but gated by content |
-| **System (S)** | 2 | P-23 (Network Error), P-26 (Loading) - overlaid, not page-level |
-| **Total** | **32** | All screens justified; no screen without Golden Question answer |
+| **System (S)** | 2 | P-23 (Network Error), P-26 (Loading) - overlaid, not page-level; numbered in the P sequence, categorised as System |
+| **Total** | **34** | All screens justified; no screen without Golden Question answer |
+
+*Count note: P-01 through P-27 is 27 defined screens. Two of them (P-23, P-26) are System overlays rather than pages, leaving 25 Primary. 25 + 7 Admin = **34 screens total**. Earlier drafts of this document stated 32; that figure was arithmetically wrong and has been corrected throughout.*
 
 **Verification:**
 - Every screen traces to Phase 2.5 page contracts (§3.1-3.11).
@@ -703,7 +705,7 @@ The 11 page contracts from Phase 2.5 expand into practical screens. Multi-step f
 
 ## PART 2 - SCREEN RELATIONSHIP MAP
 
-This section maps how all 32 screens connect LOGICALLY. It is not a sitemap. It defines the architecture of movement.
+This section maps how all 34 screens connect LOGICALLY. It is not a sitemap. It defines the architecture of movement.
 
 ### 2.1 THE SPINE - The Primary Journey Path
 
@@ -740,7 +742,7 @@ P-01 Welcome Beat
 - **Direction:** Always forward (Welcome → Landscape → Detail → Registration → Confirmation → Your Space)
 - **Cannot be reversed at will:** The forward path builds confidence; the back path preserves state (Phase 2 Part 11.3)
 - **One primary action per screen:** The spine has no competing CTAs
-- **Length:** 7 screens from arrival to confirmation (excluding payment if TBD = no fees)
+- **Length:** 8 screens from arrival to confirmation — P-01, P-03, P-04, P-06, P-07, P-08, P-09, P-11 (9 when payment applies, adding P-10 between P-09 and P-11)
 
 **Constitutional trace:** Charter §3 (9-step journey); Phase 2.5 §PART 6 (Progress before breadth)
 
@@ -920,7 +922,7 @@ Every point where a user can get stuck has a named recovery path. This is the "n
 
 | Connection type | Count | Screens involved |
 |---|---|---|
-| **Spine edges** | 7 | P-01 → P-03 → P-04 → P-06 → P-07 → P-08 → P-09 → (P-10) → P-11 → P-12 |
+| **Spine edges** | 9 (10 when payment applies) | P-01 → P-03 → P-04 → P-06 → P-07 → P-08 → P-09 → (P-10) → P-11 → P-12 |
 | **Hub branches** | 32 | 6 hubs × 5.3 average exits |
 | **Terminal exits** | 20 | 8 terminals × 2.5 average exits |
 | **Recovery paths** | 11 | Named for every stuck point |
@@ -1452,8 +1454,8 @@ Admin screens follow standard admin patterns with the constraint that they are i
 
 ## PART 3 END - SUMMARY AUDIT
 
-### Screens blueprinted: 32
-- **23 Primary screens** (P-01 through P-27)
+### Screens blueprinted: 34
+- **25 Primary screens** (P-01 through P-27, less the two System overlays P-23 and P-26)
 - **7 Admin screens** (A-01 through A-07)
 - **0 screens without Golden Question justification**
 - **0 content objects placed without Phase 2.5 inventory reference**
@@ -2648,7 +2650,7 @@ How components vary across dimensions:
 - **Exclusive mutuals:** 7 pairs that never coexist, with constitutional justification
 - **Optional dependencies:** 10 components that exist only when triggered
 - **State sharing:** 8 pairs with shared state and direction
-- **Ownership map:** All 46 content objects (A1 through D4, E1 through E3, F1 through F4, G1 through G3) mapped to their component owner
+- **Ownership map:** All 43 content objects (A1-A8, B1-B12, C1-C7, D1-D6, E1-E3, F1-F4, G1-G3) mapped to their component owner
 - **Reuse scope:** Every component classified as GLOBAL / AREA / SCREEN
 - **Variant system:** 4 dimensions (surface, cluster, season, context) mapped
 
@@ -3811,7 +3813,7 @@ Registration is the heart of the platform. This section defines the complete fie
 
 ### 9.A REGISTRATION FLOW STRUCTURE
 
-Six steps map to screens P-06 through P-11. Payment (Step 4 / Step 5 in some variations) is conditional on TBD resolution (Charter §7).
+Six steps map to screens P-06 through P-11, in this fixed order: Declare Intent (P-06) → Participant Information (P-07) → Declaration & Agreement (P-08) → Review & Confirm (P-09) → Payment (P-10) → Submission/Confirmation (P-11). Payment (Step 5) is conditional on TBD resolution (Charter §7); when there are no fees the flow is five steps and Step 4 leads directly to Confirmation. **Payment always follows review — never precedes it** (Part 1 P-10; Part 2.8 forbidden paths; Phase 2 Part 15.4).
 
 #### STEP 1: DECLARE INTENT (P-06)
 
@@ -3921,9 +3923,43 @@ Six steps map to screens P-06 through P-11. Payment (Step 4 / Step 5 in some var
 
 ---
 
-#### STEP 4: PAYMENT (P-10 - TBD PLACEHOLDER)
+#### STEP 4: REVIEW & CONFIRM (P-09)
 
-**IMPORTANT:** This step is P-gated by Charter §7. If TBD resolves to "no fees," this step is omitted and Step 3 (P-09) goes directly to Confirmation (P-11).
+**What exists on screen:**
+
+| Field | Type | Source | Edit capability | Why | Constitution |
+|---|---|---|---|---|---|
+| Event name + cluster + format | C-09 Review Summary | From Step 1 (P-06) | Link → P-06 | Restates the choice - final mirror | Phase 2 Part 10.2 |
+| Participant name | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Identity confirmation | Phase 2 Part 10.3 |
+| School + Class | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Eligibility confirmation | Phase 2 Part 10.3 |
+| Contact method | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Functional confirmation | Phase 2 Part 10.3 |
+| Team members (if applicable) | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Team confirmation | Phase 2 Part 10.3 |
+| Agreements acknowledged | C-09 Review Summary | From Step 3 (P-08) | Link → P-08 | Rules confirmation | Phase 2 Part 10.2 |
+| Payment amount due (if applicable) | C-09 Review Summary | C3 (payment facts - TBD) | - (paid at Step 5) | The money fact is stated *before* commitment, never after (Phase 2 Part 15.4) | Phase 2 Part 15.4 |
+
+**Last Check message:**
+- A single sentence restating the registration: "You're registering for [Event Name] as a [Solo/Team of N] from [School], Class [X]."
+- This is the final certainty statement - the last thought before committing should be "yes" (Phase 2 Part 10.2).
+
+**Interaction:**
+- Primary CTA: "Confirm Registration" → Step 5 (P-10 Payment) when fees apply; → P-11 Confirmation when they do not
+- Secondary: "Edit Details" → returns to P-07 (edit all fields); individual edit links go to relevant step
+- Cancel: "Cancel and Return to Event" → P-04 (no penalty)
+
+**Why edit links go to specific steps, not all to P-07:**
+- Editing event choice → P-06 (Step 1)
+- Editing participant info → P-07 (Step 2)
+- Editing agreements → P-08 (Step 3)
+- Each edit link preserves the user's position in the flow - they go back to edit one thing, not restart entirely (Phase 2 Part 20.2: nothing lost).
+- Payment is not editable here because it has not happened yet - the review states the amount due; the transaction occurs at Step 5.
+
+---
+
+#### STEP 5: PAYMENT (P-10 - TBD PLACEHOLDER)
+
+**IMPORTANT:** This step is P-gated by Charter §7. If TBD resolves to "no fees," this step is omitted and Step 4 (P-09) goes directly to Confirmation (P-11).
+
+**Why payment comes AFTER review (not before):** money follows commitment, never precedes it (Part 1, P-10 Golden Question). The participant confirms *what* they are registering for, and only then transacts. Reversing this order is a forbidden path (Part 2.8: payment before event context).
 
 **What exists on screen (structure only - no payment specifics invented):**
 
@@ -3957,39 +3993,7 @@ When TBD resolves to charged registration:
 
 ---
 
-#### STEP 5: REVIEW & CONFIRM (P-09)
-
-**What exists on screen:**
-
-| Field | Type | Source | Edit capability | Why | Constitution |
-|---|---|---|---|---|---|
-| Event name + cluster + format | C-09 Review Summary | From Step 1 (P-06) | Link → P-06 | Restates the choice - final mirror | Phase 2 Part 10.2 |
-| Participant name | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Identity confirmation | Phase 2 Part 10.3 |
-| School + Class | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Eligibility confirmation | Phase 2 Part 10.3 |
-| Contact method | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Functional confirmation | Phase 2 Part 10.3 |
-| Team members (if applicable) | C-09 Review Summary | From Step 2 (P-07) | Link → P-07 | Team confirmation | Phase 2 Part 10.3 |
-| Agreements acknowledged | C-09 Review Summary | From Step 3 (P-08) | Link → P-08 | Rules confirmation | Phase 2 Part 10.2 |
-| Payment status (if applicable) | C-09 Review Summary | From Step 4 (P-10) | Link → P-10 | Money confirmation | Phase 2 Part 15.4 |
-
-**Last Check message:**
-- A single sentence restating the registration: "You're registering for [Event Name] as a [Solo/Team of N] from [School], Class [X]."
-- This is the final certainty statement - the last thought before committing should be "yes" (Phase 2 Part 10.2).
-
-**Interaction:**
-- Primary CTA: "Confirm Registration" → Submit (Step 6 / P-10 or P-11)
-- Secondary: "Edit Details" → returns to P-07 (edit all fields); individual edit links go to relevant step
-- Cancel: "Cancel and Return to Event" → P-04 (no penalty)
-
-**Why edit links go to specific steps, not all to P-07:**
-- Editing event choice → P-06 (Step 1)
-- Editing participant info → P-07 (Step 2)
-- Editing agreements → P-08 (Step 3)
-- Editing payment → P-10 (Step 4, if exists)
-- Each edit link preserves the user's position in the flow - they go back to edit one thing, not restart entirely (Phase 2 Part 20.2: nothing lost).
-
----
-
-#### STEP 6: SUBMISSION (transition between P-09 and P-11)
+#### STEP 6: SUBMISSION (transition between P-09/P-10 and P-11)
 
 **What the user sees:**
 
@@ -4065,8 +4069,8 @@ Every field position justified using Phase 2 Part 10 (certainty before doorway):
 | Contact (email/phone) | Step 2, Field 4 | B12 registration requirements | Functional. Comes after identity. Announced at B12. |
 | Team Members | Step 2, Field 5 (conditional) | B4 team size + Step 1's team format | Highest friction. Conditional. Mental prep provided by Step 1. |
 | Agreements | Step 3 (P-08) | B7 rules (Event Detail, Zone D) - participant READ the rules | Acknowledgement of what they read. Not a surprise. |
-| Payment | Step 4 (P-10, conditional) | TBD - but announced before payment step (Phase 2 Part 15.4) | After all commitment. Money comes last. |
-| Review | Step 5 (P-09) | - (it IS the summary of everything) | Final restatement. The mirror. |
+| Review | Step 4 (P-09) | - (it IS the summary of everything) | Final restatement. The mirror. Comes before payment so the amount due is seen in full context. |
+| Payment | Step 5 (P-10, conditional) | TBD - amount stated at Step 4 review (Phase 2 Part 15.4) | After all commitment. Money comes last. |
 
 **Golden Question check:** Does each field help reduce uncertainty (Charter §6 Q1/Q2)? Yes - each field confirms an identity or commitment already decided. None invents a new requirement.
 
@@ -4092,7 +4096,7 @@ Every field position justified using Phase 2 Part 10 (certainty before doorway):
 |---|---|---|---|
 | Event is solo (B4 team size = 1) | Team Member Block (C-03) | Event is team (B4 > 1) | P-07 Step 2 |
 | Contact email not entered | Phone alternative | Email empty on blur | P-07 Step 2 |
-| Payment not required (Charter §7 TBD = no fees) | Entire Step 4 (P-10) | TBD resolution | Flow routing |
+| Payment not required (Charter §7 TBD = no fees) | Entire Step 5 (P-10) | TBD resolution | Flow routing |
 | First visit (no draft exists) | Nothing extra | Draft exists in localStorage → "Resume" overlay | P-06 or later |
 
 **Why progressive disclosure matters (Phase 2 Part 10):**
@@ -4109,7 +4113,7 @@ Every field position justified using Phase 2 Part 10 (certainty before doorway):
 |---|---|---|---|
 | Step 1 (Declare Intent) | "Solo" shown in team format | "Team of [N]" shown in team format | Different scope (Phase 2 Part 10.2) |
 | Step 2 (Participant Info) | Name, School, Class, Contact only | Name, School, Class, Contact + Team Members block | Variable data capture (Phase 0 §3.1) |
-| Team Member Block | **完全 hidden** (not shown at all) | **Visible** with N min/max slots (from B4) | Conditional by event type |
+| Team Member Block | **Completely hidden** (not shown at all) | **Visible** with N min/max slots (from B4) | Conditional by event type |
 | Add/Remove controls | Never appear | Appear per member row | Only when team exists |
 | Review (Step 5) | Single participant summary | Team roster in summary | Reflects what was entered |
 | Confirmation (P-11) | "You're registered for [Event]" | "[School] Team of N is registered for [Event]" | Accurate record |
@@ -4928,7 +4932,7 @@ Interaction behaviour for the entire platform - what happens when the user does 
 
 | Action | Requires confirmation? | How | Where | Constitution |
 |---|---|---|---|---|
-| **Submission (Register)** | **Yes** - Step 5 (P-09 Review & Confirm) IS the confirmation pattern. User reviews all data + clicks "Confirm Registration." | Review → Confirm (two actions: read all, click confirm) | P-09 → P-11 | WCAG 3.3.4 (Error Prevention); Phase 2 Part 10.2 |
+| **Submission (Register)** | **Yes** - Step 4 (P-09 Review & Confirm) IS the confirmation pattern. User reviews all data + clicks "Confirm Registration." | Review → Confirm (two actions: read all, click confirm) | P-09 → P-11 | WCAG 3.3.4 (Error Prevention); Phase 2 Part 10.2 |
 | **Submission (Payment)** | **Yes** - CTA: "Pay and Complete" is explicit. No "Pay Now" without review. | Review → Pay (payment details always visible before action) | P-10 (if exists) | Phase 2 Part 15.4 (money trust) |
 | **Leaving mid-flow** | **Yes** - "Save progress?" prompt IF user has entered data and attempts to navigate away (browser back, URL change, or explicit navigation to non-flow page). | "You're mid-registration. Save progress?" → Saves draft → "Progress saved" toast → Returns to event detail. | P-06 through P-09 | Phase 2 Part 20.2 (state preservation); Part 13.1 (resumable) |
 | **Cancel registration** | **Yes** - "Cancel and Return to Event" is visible on Review step (P-09). Tapping shows: "Canceling won't affect anything. Return to the event?" → Returns to P-04. | Honest, non-punishing. | P-09 | Phase 2 Part 14 (non-punishing retreat) |
@@ -5074,11 +5078,12 @@ The prefix determines the category. The number is globally unique across the pla
 
 | Prefix range | Category | Example |
 |---|---|---|
-| **P-01 to P-27** | Primary screens (participant-facing) | P-04: Event Detail |
+| **P-01 to P-27** | Participant-facing screens. Two of these — **P-23 (Network Error)** and **P-26 (Loading)** — are *categorised* as System overlays in Part 1 but keep their P numbers. | P-04: Event Detail |
 | **A-01 to A-07** | Admin screens (organizer-facing) | A-06: Admin — Season & State Control |
-| **S-01 to S-04** | System screens (error, loading, offline) | S-01: Loading Skeleton |
 
-Screen names in code, documentation, and comments always use the P-NN/A-NN/S-NN code. Informal references ("event page", "dashboard") must always be traceable to the code. New screens follow the next available number in sequence.
+Screen names in code, documentation, and comments always use the P-NN/A-NN code. Informal references ("event page", "dashboard") must always be traceable to the code. New screens follow the next available number in sequence.
+
+**There is no `S-` prefix.** An earlier draft of this section proposed `S-01 to S-04` for system screens; that scheme was never applied in Part 1 and would collide with the existing P-numbers for the same screens. System status is a **category**, not a prefix — P-23 and P-26 are System screens with P numbers. Any code, comment, or document referring to `S-01`–`S-04` is referring to a naming scheme that does not exist.
 
 #### Component names
 
@@ -5089,7 +5094,7 @@ The category letter determines the domain. The number is unique within the categ
 | Category | Domain | Range | Example |
 |---|---|---|---|
 | **A-** | Navigation & Wayfinding | 01–07 | A-03: Nav Items |
-| **B-** | Event Display & Discovery | 01–05 | B-01: Event Tile |
+| **B-** | Event Display & Discovery | 01–06 | B-01: Event Tile |
 | **C-** | Forms & Input | 01–12 | C-01: Text Input |
 | **D-** | Dashboard (Your Space) | 01–05 | D-02: Registration Record Card |
 | **E-** | Schedule | 01–03 | E-02: Schedule Time Slot Card |
@@ -5219,7 +5224,7 @@ Patterns that must remain flexible for future editions (2K26, 2K27...).
 | **New events (17+ to 100)** | B-01 Event Tiles are data-driven. Tiles render in cluster groups. Landscape adapts density via breakpoints. | 20+ events may trigger new clusters. Breakpoints handle density. |
 | **New clusters (5+)** | B-02/B-03 accept any name. I-04 generates chips from event data. No hardcoded cluster count. | New order is admin-defined. Visual treatments per cluster are Phase 4. |
 | **Registration flow steps** | C-05 supports 4–8 steps. Each step is a P-NN screen. Add a step = insert a new screen in the chain. | Step declaration (P-06 Zone B) lists expected steps. |
-| **Season state transitions** | G1 is configurable enum. Admin toggles. Unknown states handled gracefully. | All 32 screens must respond to any G1 value. |
+| **Season state transitions** | G1 is configurable enum. Admin toggles. Unknown states handled gracefully. | All 34 screens must respond to any G1 value. |
 | **TBD placeholder replacement** | Placeholder postures share the same component shape as real content. Swapping = swapping data source. | See §14.F — placeholder implementation pattern. |
 | **Edition reuse (2K27+)** | G2 is the edition key. All content edition-scoped in Supabase. Admin resets per edition. | Phase 2.5 §12 scalability. |
 | **Payment flow (TBD)** | P-10 is structural. Payment component accepts a config object. When TBD resolves, config is populated. | Never invent payment amounts or gateway names. |
@@ -5234,7 +5239,7 @@ What implementation **CANNOT change** vs what **MAY vary** by developer choice.
 |---|---|---|
 | **Screen contracts** (Part 1) | Purpose, audience, entry/exit are structural | Part 1, Golden Question |
 | **Content zones per screen** (Part 3) | Zone hierarchy = reading order = journey beat | Part 3, Charter §5 |
-| **Content object inventory** (Phase 2.5) | 46 objects, single-source ownership | Phase 2.5 Part 1 |
+| **Content object inventory** (Phase 2.5) | 43 objects, single-source ownership | Phase 2.5 Part 1 |
 | **Component inventory** (Part 4) | 54 components, justified, EVOKE-Tested | Part 4 |
 | **State machines** (Part 7) | Every state triggered by known condition | Part 7 |
 | **Season state machine** (G1) | Time Architecture backbone | Phase 2.5 G1 |
@@ -5338,7 +5343,7 @@ TBD items (Charter §7) follow a strict architectural pattern. Placeholders are 
 
 ### 14.G INTENDED STACK
 
-Reference only. Intended stack: **HTML, CSS, JavaScript, Python, Supabase**.
+Reference only. Intended stack: **HTML, CSS, JavaScript, Python, Supabase** — set in `docs/ROADMAP.md`. (The Product Charter does not specify a stack; §6 there is the 4-question decision filter.)
 
 | Spec concept | Maps to stack | How |
 |---|---|---|
@@ -5448,8 +5453,8 @@ Hard constraints:
 | **Every component exists** (Part 4) | No new components. No removed components. All 54 must be designed. |
 | **Every screen has its zones** (Part 3) | Zone order, hierarchy, density. Cannot reorder or skip. |
 | **Every state exists** (Part 7) | All screen and component states designed. No state optional. |
-| **No inventing screens** | 32 screens total. No extras without constitution trace. |
-| **No removing screens** | All 32 exist. Removal requires written justification. |
+| **No inventing screens** | 34 screens total. No extras without constitution trace. |
+| **No removing screens** | All 34 exist. Removal requires written justification. |
 | **Blacklist is HARD** (60 items) | No exceptions. Forbidden everywhere. |
 | **EVOKE Test passes** (12 questions) | All must pass. Failing requires redesign. |
 | **One Last Rule** | Every element solves a problem. Nothing because it looks good. |
@@ -5490,7 +5495,7 @@ Hard constraints:
 
 | # | Question | Validates |
 |---|---|---|
-| 1 | **Does every screen pass the EVOKE Test?** | Coherent identity across 32 screens |
+| 1 | **Does every screen pass the EVOKE Test?** | Coherent identity across 34 screens |
 | 2 | **Does every element pass the One Last Rule?** | Nothing exists because it looks good |
 | 3 | **Does every state machine have visual representations?** | All Part 7 states designed |
 | 4 | **Does every screen exist on all 4 surfaces?** | Part 6 responsive fulfilled |
@@ -5507,7 +5512,7 @@ Hard constraints:
 | 15 | **Does the Lost Slip (404) use the exception grammar?** | Phase 1.5 §11.1.5 |
 
 **Review process:**
-1. Designer produces all 32 screens × 4 surfaces × all states
+1. Designer produces all 34 screens × 4 surfaces × all states
 2. Each screen checked against its Golden Question (Part 1)
 3. Each screen checked against its content zones (Part 3)
 4. Each component checked against its spec (Part 4)
@@ -5618,9 +5623,9 @@ If 10 different designers receive this document, would they produce the same pro
 
 | Part | Coverage | Ambiguity | Scope |
 |---|---|---|---|
-| **Part 1 – Screens** | 32 screens, full metadata | **Very low** | Only TBD content varies |
+| **Part 1 – Screens** | 34 screens, full metadata | **Very low** | Only TBD content varies |
 | **Part 2 – Relationships** | 7 types, 12 forbidden, 11 recovery | **Very low** | Deterministic |
-| **Part 3 – Wireframes** | 32 screens, zones | **Low** | Visual treatment within zones |
+| **Part 3 – Wireframes** | 34 screens, zones | **Low** | Visual treatment within zones |
 | **Part 4 – Components** | 54 components, 9 categories | **Very low** | Implementation flexible |
 | **Part 5 – Relationships** | Parent-child, composition | **Very low** | Styling flexible |
 | **Part 6 – Responsive** | 4 surfaces, per-screen | **Low** | Pixel breakpoints flexible |
@@ -5629,7 +5634,7 @@ If 10 different designers receive this document, would they produce the same pro
 | **Part 9 – Forms** | 5 steps, validation, model | **Low** | Field names TBD |
 | **Part 10 – Discovery** | No search, 3 mechanisms | **Very low** | Structure only |
 | **Part 11 – Navigation** | 7 components, 2 tiers | **Low** | Pixel budget flexible |
-| **Part 12 – Error/Empty** | 8 errors, 6 empty, 4 loading, 3 waiting | **Very low** | Visual treatment flexible |
+| **Part 12 – Error/Empty** | 5 errors, 6 empty, 4 loading, 3 waiting | **Very low** | Visual treatment flexible |
 | **Part 13 – Interactions** | 5 gestures, keyboard | **Low** | Curves/durations flexible |
 | **Part 14 – Dev Contract** | Full developer guidance | **Very low** | Implementation bounded |
 | **Part 15 – Design Contract** | Freedom boundaries | **Very low** | Visuals within bounds free |
@@ -5700,7 +5705,7 @@ If 10 different designers receive this document, would they produce the same pro
 | Requirement | Evidence |
 |---|---|
 | **11 page contracts** | All fulfilled (Part 3) |
-| **46 content objects** | All mapped (Part 5 §5.6) |
+| **43 content objects** | All mapped (Part 5 §5.6) |
 | **Single-source** | Each object one owner |
 | **Season states (5)** | G1 defined, consumed everywhere |
 | **4 recovery routes** | Back, Around, Out, Later |
@@ -5748,9 +5753,9 @@ If 10 different designers receive this document, would they produce the same pro
 | Dimension | Score (1-5) | Rationale |
 |---|---|---|
 | **Interface Architecture overall** | **5** | 17 parts. Every structural dimension covered. |
-| **Screen Inventory** (Part 1) | **5** | 32 screens. Full metadata per screen. |
+| **Screen Inventory** (Part 1) | **5** | 34 screens. Full metadata per screen. |
 | **Screen Relationships** (Part 2) | **5** | 7 types, 12 forbidden, 11 recovery. Deterministic map. |
-| **Wireframe Blueprint** (Part 3) | **5** | 32 screens blueprinted. Wireframe artist can build from this. |
+| **Wireframe Blueprint** (Part 3) | **5** | 34 screens blueprinted. Wireframe artist can build from this. |
 | **Component Inventory** (Part 4) | **5** | 54 components. Every one specified with Purpose/Where/Never/States. |
 | **Component Relationships** (Part 5) | **5** | Parent-child, composition, ownership, reuse. Complete. |
 | **Responsive Behaviour** (Part 6) | **5** | 4 surfaces. Per-screen behavioural design. Thumb reach. |
@@ -5759,7 +5764,7 @@ If 10 different designers receive this document, would they produce the same pro
 | **Form Architecture** (Part 9) | **4** | 5 steps, validation, data model, draft. Minus 1: field names TBD (Charter §7). |
 | **Search & Discovery** (Part 10) | **5** | No search (justified). 3 discovery mechanisms. |
 | **Navigation Blueprint** (Part 11) | **5** | 7 components, 2 tiers. Season-aware. Admin separated. |
-| **Error/Empty/Loading** (Part 12) | **5** | 8 errors, 6 empty, 4 loading, 3 waiting. All defined. |
+| **Error/Empty/Loading** (Part 12) | **5** | 5 errors, 6 empty, 4 loading, 3 waiting. All defined. |
 | **Interaction Blueprint** (Part 13) | **4** | 5 gestures, keyboard map, mobile audit. Minus 1: exact curves TBD (Phase 4). |
 | **Developer Contract** (Part 14) | **5** | Naming, ownership, patterns, fixed/flexible, data flows, placeholder, stack, performance. |
 | **Designer Contract** (Part 15) | **5** | Immutable, changeable, freedom map, constraints, boundaries, review (15Q). |
@@ -5779,7 +5784,7 @@ If 10 different designers receive this document, would they produce the same pro
 **YES.**
 
 **What Phase 4 inherits:**
-- 32 screens with zones, hierarchy, content objects
+- 34 screens with zones, hierarchy, content objects
 - 54 components with states, variants, composition rules
 - All state machines with triggers, visibility, recovery
 - All accessibility (106 requirements, reduced-motion equivalents)
@@ -5808,13 +5813,13 @@ If 10 different designers receive this document, would they produce the same pro
 **YES — Phase 4 is the visual gate.**
 
 **Buildable now (structural):**
-- Screen routing (32 routes defined)
+- Screen routing (34 routes defined)
 - Component skeletons (54 shapes defined)
 - Data flow layer (Supabase schema draft)
 - Season state management (G1 global)
 - Accessibility layer (106 structural requirements)
 - Form validation architecture (rules defined, fields TBD)
-- Error/recovery infrastructure (F-01, F-02, S-01–S-04)
+- Error/recovery infrastructure (F-01, F-02; screens P-23, P-24, P-25, P-26, P-27)
 - Placeholder components (§14.F)
 
 **Must wait for Phase 4:**

@@ -206,7 +206,7 @@ EVOKE 2K26 is an **inter-school festival** — a competitive and creative gather
 | Axis | On-Stage (1–8) | Off-Stage (9–16) |
 |---|---|---|
 | **Performance vs Craft** | Performance (7 of 8 are performative; Quiz is intellectual) | Craft/Artistic (7 of 8; Cooking is culinary-creative) |
-| **Team vs Solo** | Mixed: 4 team (1,2,3,4,6) / 3 solo (5,7,8) | Mixed: 3 team (9,10,14) / 4 solo (11,12,13,15,16 — 16 allows individual) |
+| **Team vs Solo** | Mixed: 5 team (1,2,3,4,6) / 3 solo (5,7,8) | Mixed: 3 team (9,10,14) / 5 solo (11,12,13,15,16 — 16 allows individual) |
 | **Time-intensive** | Group Dance (5 min), Group Song (4 min) | Pot Painting (1–2 h), Art & Craft (1–2 h), Face Painting (1 h), Collage (1 h), Sketch (1 h), Best Out of Waste (1 h), Veg Carving (50 min) |
 | **Short duration** | Dumb Charades (1–2 min/round), Fashion Show (1–2 min), Solo Song (2 min), Solo Dance (3–5 min) | — |
 | **Creative freedom** | High in Dance/Song (song choice, style); medium in Fashion (theme-bound) | Very high (artistic expression) but constrained by themes, tools, originality |
