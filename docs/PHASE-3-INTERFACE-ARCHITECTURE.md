@@ -22,11 +22,11 @@ This specification is a hypothesis until it meets real content. Where a Phase 4 
 
 | # | Date | Amendment | Falsified by | Sections changed |
 |---|---|---|---|---|
-| **A1** | 2026-08-09 | **Tab order is positional, not numbered.** The P-03 keyboard journey enumerated absolute tab indices assuming four tiles per cluster. Tile counts are a property of content, not interface. | Phase 4 Round 1 — real cluster sizes are Stage 6 · Mind 2 · Art 5 · Maker 3 | §8.A |
-| **A2** | 2026-08-09 | **The "4 clusters × 4 events" model is withdrawn.** Cluster sizes are uneven and the layout must absorb that. Choice reduction comes from *naming* four groups, not from their being equal. A fixed 2×2 cluster grid is no longer specified. | Phase 4 Round 1 | §3 (P-03 blueprint), §6.B |
-| **A3** | 2026-08-09 | **Zone E is adaptive, not fixed two-column.** Judging criteria exist in the source for only 6 of 16 events. Two columns appear only when both blocks have content; an empty second column is forbidden, because a hollow box implies withheld information. Criteria are never fabricated to fill it. | Phase 4 Round 1 | §3 (P-04 blueprint), §6.D, §5.4, §5.6 |
-| **A4** | 2026-08-09 | **Text search re-evaluated against real content and still rejected** for the curated 16-event catalogue. Re-opened only if the catalogue grows substantially. | Phase 4 Round 1 | §10.A |
-| **A5** | 2026-08-09 | **The declared step count is conditional, and must be worded as such.** §9 promises the participant a declared number of steps, and C-05 was specified to support "4 or 5". But whether a payment step exists at all is unknown (Charter §7), so neither "4 steps" nor "5 steps" can be stated honestly today. The declaration is therefore **"Step N of 4, plus payment if fees apply"**, with the conditional step shown as a distinct, visibly provisional marker. When fees are resolved the wording collapses to a fixed count with no structural change. | Phase 4 Round 2 | §9.A, §9.D, Part 4 C-05 |
+| **AM-01** | 2026-08-09 | **Tab order is positional, not numbered.** The P-03 keyboard journey enumerated absolute tab indices assuming four tiles per cluster. Tile counts are a property of content, not interface. | Phase 4 Round 1 — real cluster sizes are Stage 6 · Mind 2 · Art 5 · Maker 3 | §8.A |
+| **AM-02** | 2026-08-09 | **The "4 clusters × 4 events" model is withdrawn.** Cluster sizes are uneven and the layout must absorb that. Choice reduction comes from *naming* four groups, not from their being equal. A fixed 2×2 cluster grid is no longer specified. | Phase 4 Round 1 | §3 (P-03 blueprint), §6.B |
+| **AM-03** | 2026-08-09 | **Zone E is adaptive, not fixed two-column.** Judging criteria exist in the source for only 6 of 16 events. Two columns appear only when both blocks have content; an empty second column is forbidden, because a hollow box implies withheld information. Criteria are never fabricated to fill it. | Phase 4 Round 1 | §3 (P-04 blueprint), §6.D, §5.4, §5.6 |
+| **AM-04** | 2026-08-09 | **Text search re-evaluated against real content and still rejected** for the curated 16-event catalogue. Re-opened only if the catalogue grows substantially. | Phase 4 Round 1 | §10.A |
+| **AM-05** | 2026-08-09 | **The declared step count is conditional, and must be worded as such.** §9 promises the participant a declared number of steps, and C-05 was specified to support "4 or 5". But whether a payment step exists at all is unknown (Charter §7), so neither "4 steps" nor "5 steps" can be stated honestly today. The declaration is therefore **"Step N of 4, plus payment if fees apply"**, with the conditional step shown as a distinct, visibly provisional marker. When fees are resolved the wording collapses to a fixed count with no structural change. | Phase 4 Round 2 | §9.A, §9.D, Part 4 C-05 |
 
 **Not amended:** the cluster concept itself, which real content supports. Phase 0 §3.4 always recorded the true distribution — the 4×4 error was introduced at Phase 3, not inherited.
 
@@ -1029,7 +1029,7 @@ For each screen from Part 1, this section defines the structural blueprint: cont
 
 **Reading order:** Top-down through clusters. Within each cluster: scan event tiles (F-pattern across tiles: name → cluster → status → tap). The 4 clusters create natural breaks in the scroll.
 **Interaction order:** Scan clusters → select cluster of interest → scan events within → tap event → Event Detail
-**Scanning order (5 seconds):** "Stage" cluster tag → first 2-3 event names → "Mind" cluster tag → its 2 event names → pattern recognized. Cluster sizes are uneven by content (Stage 6 · Mind 2 · Art 5 · Maker 3); the scan reads the *pattern of grouping*, not a fixed count per group. See Amendment A2.
+**Scanning order (5 seconds):** "Stage" cluster tag → first 2-3 event names → "Mind" cluster tag → its 2 event names → pattern recognized. Cluster sizes are uneven by content (Stage 6 · Mind 2 · Art 5 · Maker 3); the scan reads the *pattern of grouping*, not a fixed count per group. See Amendment AM-02.
 **Decision order:** The screen guides toward narrowing: 16 events → pick cluster → scan events → pick event. Choice paralysis is prevented by cluster grouping (Phase 2 Part 3.3).
 **Season variations:**
 - **Announcement:** Status badges all show "Details coming" → read-only (no tap to register, tap to preview)
@@ -1087,7 +1087,7 @@ For each screen from Part 1, this section defines the structural blueprint: cont
 
 **Mobile vs Desktop differences:**
 - **Mobile:** All zones are single-column, stacked. Zone C (quick facts) is compact cards (not grid). Zone E (judging/materials) is stacked, not side-by-side. Zone G is a fixed bottom bar (thumb-reachable at all times - Phase 2 §13.1). Zone F (FAQ) is accordion, not side-by-side.
-- **Desktop:** Zone C may be a 3-column grid. Zone E is two-column **only when both a judging block and a materials block have content**; otherwise it is a single column (see Amendment A3). Zone G is inline at natural document flow (not sticky) - but still always accessible via scroll-back-to-top. Zone F may be side-by-side with Zone D on wide screens.
+- **Desktop:** Zone C may be a 3-column grid. Zone E is two-column **only when both a judging block and a materials block have content**; otherwise it is a single column (see Amendment AM-03). Zone G is inline at natural document flow (not sticky) - but still always accessible via scroll-back-to-top. Zone F may be side-by-side with Zone D on wide screens.
 
 ---
 
@@ -1813,7 +1813,7 @@ Every interface component the platform requires. Grouped into nine categories. E
 | **Replaceable?** | Text-only progress ("Step 2 of 4") is equivalent but adds cognitive load without visual cue. The indicator is a visual progress signal, not a text instruction. |
 | **Composition** | Dot/step indicator × N (4 or 5) / Optional step labels / Connecting line (current → future). |
 | **Accessibility** | `role="progressbar"` or `aria-valuetext="Step 2 of 4"`. Screen reader announces step position on focus. |
-| **Placeholder awareness** | Step count depends on whether payment is required (TBD - P-10 may or may not exist). Component supports 4 or 5 steps **and a conditional fifth marker** for the state where fee existence itself is unknown (Amendment A5). It must never assert a total it cannot support. |
+| **Placeholder awareness** | Step count depends on whether payment is required (TBD - P-10 may or may not exist). Component supports 4 or 5 steps **and a conditional fifth marker** for the state where fee existence itself is unknown (Amendment AM-05). It must never assert a total it cannot support. |
 
 ---
 
@@ -2748,7 +2748,7 @@ How **interface BEHAVIOUR** changes across surfaces - interaction patterns, not 
 - **Clusters:** Displayed sequentially - Stage cards scroll into view, then Mind, then Art, then Maker. Not side-by-side. Natural scroll creates visual pauses between clusters (each Cluster Group Header acts as a breathing break - Phase 1.5 §4.1).
 - **Filtering:** Cluster filter is a tap-to-collapse toggle at the bottom of the header zone. Tapping a cluster scrolls to that cluster's section. "All" filter restores full scroll.
 - **Scanning:** 16 events × sequential scroll. Each tile (B-01) is one row: mark + name + cluster tag + status badge - scannable in 2 seconds (Phase 0 §2.1: quick scanning). Eye moves down 2-3 tiles per scroll gesture.
-- **16 on one phone is not overwhelming** because (a) clusters divide the set into four named groups of uneven size (6 / 2 / 5 / 3), each small enough to hold in mind; (b) each tile carries only scanning density, not decision density; (c) the finger naturally groups tiles into chunks of 3-4 per palm-width. The reduction comes from *naming the groups*, not from their being equal. See Amendment A2.
+- **16 on one phone is not overwhelming** because (a) clusters divide the set into four named groups of uneven size (6 / 2 / 5 / 3), each small enough to hold in mind; (b) each tile carries only scanning density, not decision density; (c) the finger naturally groups tiles into chunks of 3-4 per palm-width. The reduction comes from *naming the groups*, not from their being equal. See Amendment AM-02.
 
 #### Tablet
 
@@ -2761,7 +2761,7 @@ How **interface BEHAVIOUR** changes across surfaces - interaction patterns, not 
 
 **Coordinator scanning optimisation:**
 
-- **Layout:** Cluster sections stack in the fixed order Stage → Mind → Art → Maker. Tiles inside a section flow into as many columns as the width allows, so a 6-event cluster and a 2-event cluster both look deliberate rather than broken. Total: all 16 events visible in roughly 2 viewports of scanning. A fixed 2×2 cluster grid is **not** used — it assumed equal cluster sizes. See Amendment A2.
+- **Layout:** Cluster sections stack in the fixed order Stage → Mind → Art → Maker. Tiles inside a section flow into as many columns as the width allows, so a 6-event cluster and a 2-event cluster both look deliberate rather than broken. Total: all 16 events visible in roughly 2 viewports of scanning. A fixed 2×2 cluster grid is **not** used — it assumed equal cluster sizes. See Amendment AM-02.
 - **Filtering:** Sticky filter bar at top - remains visible during scroll. Tapping a cluster chip narrows tiles and announces results count.
 - **Hover context exists:** Event tiles show slight lift + outline on hover (Bible §11: acknowledgement only, never layout change). This gives coordinators an extra scan cue (is this tile interactive? what cluster?). Hover states double as focus states for keyboard users.
 - **Why:** Coordinators need to scan multiple events quickly (Phase 0 §2.2: "checklist-driven"). Desktop gives them parallel scanning; mobile gives them focused scanning. Neither is wrong - they serve different tasks.
@@ -2842,7 +2842,7 @@ How **interface BEHAVIOUR** changes across surfaces - interaction patterns, not 
 **Multi-column where justified by constitution:**
 
 - **Quick Facts (Zone C):** Three-column grid for 3+ facts. Scannable in parallel - coordinator reads team size, time limit, and eligibility simultaneously.
-- **Judging & Materials (Zone E):** Two-column **only when both blocks have content** — judging left, materials right. For the 10 of 16 events with no stated judging criteria, Zone E is a single column carrying materials plus one honest line about criteria. An empty second column is forbidden: a hollow box implies information exists and is being withheld. See Amendment A3.
+- **Judging & Materials (Zone E):** Two-column **only when both blocks have content** — judging left, materials right. For the 10 of 16 events with no stated judging criteria, Zone E is a single column carrying materials plus one honest line about criteria. An empty second column is forbidden: a hollow box implies information exists and is being withheld. See Amendment AM-03.
 - **FAQ (Zone F):** Accordion remains - but items may be taller (more horizontal space for answers). FAQ is not side-by-side with Rules (Zone D) - the reading density of rules absorbs that attention.
 - **No side-by-side Rules + FAQ** - justified rejection: Rules are HIGH cognitive load (Phase 2 Part 7.1); splitting attention between Rules and FAQ parallel content would increase, not decrease, cognitive effort.
 - **Sticky CTA:** Not used on desktop. The Register button sits at natural document flow bottom of Zone G. Users can scroll back to top to reach it. Desktop users prefer deliberate over persistent chrome.
@@ -3284,7 +3284,7 @@ For each screen type, complete tab order and shortcut behaviour.
 | **ESC:** No effect (no modal) | | | |
 | **Why:** the event tiles are the primary content. Tab order follows visual order (cluster by cluster, in the fixed cluster order Stage → Mind → Art → Maker). Arrow keys add efficiency without overriding Tab. | | | |
 
-> **Tab order is positional, not numbered.** Absolute tab indices are deliberately not stated, because the number of tiles per cluster is a property of the content, not of the interface. Cluster sizes for the 2K26 event set are **Stage 6 · Mind 2 · Art 5 · Maker 3** (Phase 0 §3.4). Any implementation that hard-codes four tiles per cluster is wrong. See Amendment A1.
+> **Tab order is positional, not numbered.** Absolute tab indices are deliberately not stated, because the number of tiles per cluster is a property of the content, not of the interface. Cluster sizes for the 2K26 event set are **Stage 6 · Mind 2 · Art 5 · Maker 3** (Phase 0 §3.4). Any implementation that hard-codes four tiles per cluster is wrong. See Amendment AM-01.
 
 #### P-04 Event Detail
 
@@ -3841,7 +3841,7 @@ Six steps map to screens P-06 through P-11, in this fixed order: Declare Intent 
 | Cluster tag | Label (read-only) | - | Derived from event (B2) | Category context - reinforces the world they chose | Phase 0 §4.17 |
 | Team format | Display text (read-only) | - | B4 team size (e.g., "Solo" / "Team of 2-4") | Removes ambiguity about whether they need teammates | Phase 2 Part 10.1 |
 | Time limit | Display text (read-only) | - | B4 time limit (e.g., "Max 2 minutes") | Last certainty-check before commitment | Phase 2 Part 10.1 |
-| Steps ahead | Visual indicator (C-05) | - | System (4 steps, plus payment if fees apply - see Amendment A5) | "Here is what you'll be asked" - progressive disclosure at the doorway (Phase 2 Part 10.3). The count is stated conditionally while fees remain unknown; a fixed number would be an invented fact. | Phase 2 Part 10.3; Charter §5; Amendment A5 |
+| Steps ahead | Visual indicator (C-05) | - | System (4 steps, plus payment if fees apply - see Amendment AM-05) | "Here is what you'll be asked" - progressive disclosure at the doorway (Phase 2 Part 10.3). The count is stated conditionally while fees remain unknown; a fixed number would be an invented fact. | Phase 2 Part 10.3; Charter §5; Amendment AM-05 |
 | Requirements summary | Display text (read-only) | - | B12 (if any special requirements exist) | Final eligibility signal | Phase 0 §2.1 |
 
 **Interaction:**
@@ -4221,14 +4221,14 @@ How users find events - the discovery system. Governing principle: discovery mus
 |---|---|---|
 | **Category browsing (4 clusters)** | **PRIMARY** | Sixteen events are naturally grouped into Stage/Mind/Art/Maker (Phase 0 §4.17). Clusters reduce choice from 16 to 4 worlds. Progressive disclosure: headline → category → details (Phase 0 §5.3). |
 | **Full event list (16 events)** | **ALWAYS AVAILABLE** | All 16 tiles visible by default on P-03 Landscape. Cluster groups provide structure, but all events are present and scannable. No hidden events. |
-| **Text search** | **NOT BUILT - justified removal, re-confirmed against real content (Amendment A4)** | 16 events is small enough that search adds no value. A student can scan all 16 tiles within 30 seconds (Phase 0 §2.1 mobile scanning). Search implies a catalogue, not a curated festival (Phase 2 Part 3.3: guided choice, not catalogue browsing). **Golden Question:** Does it help someone choose? No - clusters do that better. |
+| **Text search** | **NOT BUILT - justified removal, re-confirmed against real content (Amendment AM-04)** | 16 events is small enough that search adds no value. A student can scan all 16 tiles within 30 seconds (Phase 0 §2.1 mobile scanning). Search implies a catalogue, not a curated festival (Phase 2 Part 3.3: guided choice, not catalogue browsing). **Golden Question:** Does it help someone choose? No - clusters do that better. |
 | **Filters (cluster, on/off-stage, status)** | **YES - cluster + status** | Cluster filter (I-04): narrows to 4-at-a-time for focused scanning. Status filter: honest visibility (Phase 2 Part 14). On/off-stage filter: exists implicitly via cluster group headers (Stage cluster = most on-stage, etc.). |
 | **Bookmarking** | **NOT BUILT - justified removal** | No "save for later" button exists. Why: the event exists forever until season changes. A returning user sees the same events (Phase 2 Part 8.3: return engine). Bookmarks imply a large catalogue to lose items in. With 16 events, every event is findable in one tap from Landscape. |
 | **Recent / Recently Viewed** | **NOT BUILT - justified removal** | 16 events is small enough that a user finds their event by scanning, not by remembering "which one did I look at?" Recency implies a catalogue. The platform guides, it does not recall. |
 | **Recommendations** | **NEVER - justified removal** | Personal choice is the festival's core (Phase 0 §1.4: students find THEIR event). Recommendations imply "you might like this" - which undermines the curated discovery of 16 events. No collaborative filtering, no "popular events," no "students like you chose." The festival does not herd. |
 | **Favorites / Heart icon** | **NOT BUILT - justified removal** | Adds a micro-interaction that solves nothing: the event tile already carries scanning density. Liking an event is not a useful action; registering is. |
 
-> **Amendment A4 — search re-evaluated, still rejected.** Phase 4 Round 1 built the Landscape with all 16 real events and re-tested the question. Text search remains rejected for the current curated 16-event catalogue: cluster grouping reduces the set faster than typing does, and a search field implies a catalogue large enough to get lost in. The Phase 4 brief mentioned "searching" as a discovery capability; that mention does not override this approved architectural decision. If the catalogue grows substantially (Phase 2.5 §12 models 100 events), search is re-opened as a scalability question, not a preference.
+> **Amendment AM-04 — search re-evaluated, still rejected.** Phase 4 Round 1 built the Landscape with all 16 real events and re-tested the question. Text search remains rejected for the current curated 16-event catalogue: cluster grouping reduces the set faster than typing does, and a search field implies a catalogue large enough to get lost in. The Phase 4 brief mentioned "searching" as a discovery capability; that mention does not override this approved architectural decision. If the catalogue grows substantially (Phase 2.5 §12 models 100 events), search is re-opened as a scalability question, not a preference.
 
 **Golden Question filter (Charter §6):**
 1. Help someone choose? → Category browsing (yes), Filters (yes), Search (no), Bookmarks (no)

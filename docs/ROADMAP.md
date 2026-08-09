@@ -26,8 +26,8 @@ Individual phase documents were written at different times and some contain stal
 **Phase 4 runs in five reviewed rounds**, one at a time, each stopping for owner review before the next begins:
 
 1. Entry → Event Discovery → Event Detail — **complete (v1), approved**
-2. Event Detail → Registration → Payment placeholder → Confirmation → Your Space — **next**
-3. Schedule, announcements, support, secondary areas
+2. Event Detail → Registration → Payment placeholder → Confirmation → Your Space — **prototyped (v0), held: blocked by organizer question A1**
+3. Schedule, announcements, support, secondary areas — not started
 4. System states across every screen
 
 *Round structure amended 2026-08-09: the originally separate Rounds 2 (registration flow) and 3 (payment, confirmation, Your Space) were merged into a single Round 2, because registration and its confirmation are one continuous decision and testing them apart would test neither honestly. Later rounds shift up by one; Phase 4 now runs in four rounds, not five.*

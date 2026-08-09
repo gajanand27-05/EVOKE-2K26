@@ -12,7 +12,7 @@
 | **Content** | Real. All 16 events from the rulebook via Phase 0 §3.1. No lorem, no invented facts. |
 | **Status** | **v1 complete — re-tested. Round 2 not started.** |
 
-> **v1 (2026-08-09)** applied the corrections approved after the review of v0. Per owner instruction, the architecture was amended *first* and the prototype was then brought into line — the prototype never silently compensates for an architectural error. See Phase 3 **Amendment Log**, entries A1–A4.
+> **v1 (2026-08-09)** applied the corrections approved after the review of v0. Per owner instruction, the architecture was amended *first* and the prototype was then brought into line — the prototype never silently compensates for an architectural error. See Phase 3 **Amendment Log**, entries AM-01–AM-04.
 
 ---
 
@@ -20,10 +20,10 @@
 
 | Approved decision | Architecture change | Prototype change |
 |---|---|---|
-| **Clusters are 6 / 2 / 5 / 3** | Amendments **A1** (tab order is positional, never numbered) and **A2** (the "4 clusters × 4 events" model withdrawn; fixed 2×2 cluster grid removed) | Tiles flow with `auto-fill` so a 6-event and a 2-event cluster both look deliberate; small clusters get a compressed header |
-| **Four-tile keyboard model** | **A1** — §8.A rewritten with positional order and the real per-cluster counts | Tab order is DOM order; no index depends on a count |
-| **Judging criteria: adaptive, never fabricated** | **A3** — Zone E is two-column *only* when both blocks have content; empty second column forbidden; B8 marked conditional (6 of 16) in §5.4 and §5.6 | Zone E renders one column, two columns, or a single honest line, according to what the source actually contains |
-| **Text search rejected** | **A4** — §10.A records the re-evaluation against real content and the standing rejection | No search field. Annotation states the decision in place |
+| **Clusters are 6 / 2 / 5 / 3** | Amendments **AM-01** (tab order is positional, never numbered) and **AM-02** (the "4 clusters × 4 events" model withdrawn; fixed 2×2 cluster grid removed) | Tiles flow with `auto-fill` so a 6-event and a 2-event cluster both look deliberate; small clusters get a compressed header |
+| **Four-tile keyboard model** | **AM-01** — §8.A rewritten with positional order and the real per-cluster counts | Tab order is DOM order; no index depends on a count |
+| **Judging criteria: adaptive, never fabricated** | **AM-03** — Zone E is two-column *only* when both blocks have content; empty second column forbidden; B8 marked conditional (6 of 16) in §5.4 and §5.6 | Zone E renders one column, two columns, or a single honest line, according to what the source actually contains |
+| **Text search rejected** | **AM-04** — §10.A records the re-evaluation against real content and the standing rejection | No search field. Annotation states the decision in place |
 | **TBD strategy** | No change — validated as-is | No change |
 | **Payment** | Untouched | Untouched |
 
@@ -33,10 +33,10 @@
 
 | Assumption | Where it lived | Verdict |
 |---|---|---|
-| Each cluster holds four events | §8.A tab table, §10.E scan narrative, §6.B mobile/desktop layout | **Withdrawn** (A1, A2) |
-| Landscape can use a fixed 2×2 cluster grid | §6.B desktop | **Withdrawn** (A2) |
-| Zone E is a two-column layout | §3 P-04 blueprint, §6.D | **Conditional now** (A3) |
-| Every event has judging criteria | implied by Zone E being "Required" | **False** — 6 of 16 (A3) |
+| Each cluster holds four events | §8.A tab table, §10.E scan narrative, §6.B mobile/desktop layout | **Withdrawn** (AM-01, AM-02) |
+| Landscape can use a fixed 2×2 cluster grid | §6.B desktop | **Withdrawn** (AM-02) |
+| Zone E is a two-column layout | §3 P-04 blueprint, §6.D | **Conditional now** (AM-03) |
+| Every event has judging criteria | implied by Zone E being "Required" | **False** — 6 of 16 (AM-03) |
 
 Two things survived contact with real content unchanged: the **cluster concept** and the **TBD placeholder strategy**.
 
@@ -94,7 +94,7 @@ F5 and F7 were proposed against v0 but were **not** in the approved decision tab
 |---|---|---|---|---|
 | **D1** | Default season = Announcement | It is the truth today | Charter §7; Phase 2.5 §11.1 | Defaulting to Registration Open |
 | **D2** | Closed/soon events still open their Detail page | Rules stay valuable when registration is shut | Phase 3 §10.B | Disabling the tile |
-| **D3** | No search box | Phase 3 §10.A, re-confirmed as Amendment A4 | Phase 3 §10.A | Adding search because a later brief mentioned it |
+| **D3** | No search box | Phase 3 §10.A, re-confirmed as Amendment AM-04 | Phase 3 §10.A | Adding search because a later brief mentioned it |
 | **D4** | TBD shown as declared gaps, never omitted | An omitted fee reads as "free" | Phase 2 §15.4 | Hiding unknown fields |
 | **D5** | Blue annotations, never amber | Wireframe emphasis must not read as brand accent | Owner brief §17 | Brand colour at wireframe stage |
 | **D6** | Season switch built as a live control | Makes G1 testable, not asserted | Phase 2.5 G1 | Describing seasons in prose |

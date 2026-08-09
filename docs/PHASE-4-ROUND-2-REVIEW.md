@@ -7,7 +7,7 @@
 | **Artifact** | `wireframes/phase-4/round-2.html` — **v0** |
 | **Screens** | P-04 handoff · P-06 · P-07 · P-08 · P-09 · P-10 (placeholder) · P-11 · P-12 · P-13 |
 | **Test events** | **Solo Dance** (solo) and **Group Dance** (5–8 members) — the two extremes of the real roster range |
-| **Status** | **v0 complete — awaiting review. Round 3 not started.** |
+| **Status** | **Reviewed 2026-08-09 — NOT APPROVED. Blocked by one business rule (F9 / question A1). Round 3 not started.** |
 
 > Registration is prototyped under an assumed **Registration Open** season. That is the only way to test it; the real season today is Announcement. The assumption is stated in the prototype banner rather than hidden.
 
@@ -32,7 +32,7 @@ Two prototype controls: event (solo vs team) and **fees: unknown / if fees apply
 
 | # | Finding | Severity | Blocked on |
 |---|---|---|---|
-| **F8** | **The declared step count cannot be stated honestly.** Phase 3 §9 promises the participant a declared number of steps; §14.C says C-05 supports "4 or 5". But whether payment exists at all is unknown, so both numbers are invented. → **Amendment A5** applied: the declaration now reads *"Step N of 4, plus payment if fees apply"*, with the conditional step drawn as a visibly provisional marker. | **High** | Resolved in architecture |
+| **F8** | **The declared step count cannot be stated honestly.** Phase 3 §9 promises the participant a declared number of steps; §14.C says C-05 supports "4 or 5". But whether payment exists at all is unknown, so both numbers are invented. → **Amendment AM-05** applied: the declaration now reads *"Step N of 4, plus payment if fees apply"*, with the conditional step drawn as a visibly provisional marker. | **High** | Resolved in architecture |
 | **F9** | **Is the person registering also a participant?** The roster labels Member 1 as "you", which assumes a student registering themselves. Phase 0 §2.2 documents a *coordinator* registering teams — and a coordinator is not a participant, so for them the roster is wrong by one person. **Phase 0 Q4** (who registers: school or individual) is unanswered. | **High** | **Organizer — Q4** |
 | **F10** | **Team roster density.** Group Dance at its maximum of 8 members means 16 roster inputs plus 4 of your own — **20 fields on a phone**. It works, but it is the longest single screen in the platform by a wide margin. | Medium | Your decision |
 | **F11** | **The payment screen cannot be completed by design.** Failure, pending and retry behaviour depend entirely on the gateway. Round 4 (system states) will not be able to finish the payment states either. | Medium | **Organizer** |
@@ -95,7 +95,9 @@ Group Dance at 8 members is the worst case in the platform and it was tested fir
 
 ## 11. Is Round 2 ready for approval?
 
-**Yes, as a prototype.** The flow is complete, honest and testable, and it surfaced three high-severity gaps that were previously invisible.
+**Reviewed and held.** Verdict 2026-08-09: prototype quality accepted (9.8/10); round **blocked by F9**, which is a product rule, not a design problem. The registration flow is frozen until question A1 is answered — see `ORGANIZER-QUESTIONS.md`. Accepted as passing: solo and team registration, declared steps, review-before-commitment, validation and accessibility, resume, unknown-payment handling, and the payment-insertion architecture (to be kept exactly as built). F10 remains a proposal, not an approved change; F11 and F12 remain pending decisions.
+
+**Prototype assessment was: yes, as a prototype.** The flow is complete, honest and testable, and it surfaced three high-severity gaps that were previously invisible.
 
 **But two of those gaps are now blocking Round 3 and beyond:** F9 (who registers) and F12 (how a receipt is retrieved) are decisions, not designs. Round 3 can proceed without them; implementation cannot.
 

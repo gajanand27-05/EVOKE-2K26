@@ -10,7 +10,7 @@ First build of the commitment path: registration → payment placeholder → con
 
 | Built this way | Why |
 |---|---|
-| Step count declared as "Step N of 4, plus payment if fees apply" | Building it exposed that neither "4 steps" nor "5 steps" can be stated honestly while fee existence is unknown. Fixed in the architecture first → **Amendment A5**, then in the prototype. |
+| Step count declared as "Step N of 4, plus payment if fees apply" | Building it exposed that neither "4 steps" nor "5 steps" can be stated honestly while fee existence is unknown. Fixed in the architecture first → **Amendment AM-05**, then in the prototype. |
 | Roster Member 1 labelled "you" | The least-assuming reading. Whether the registrant is also a participant is genuinely unresolved (Phase 0 Q4) — flagged in place rather than resolved by invention. |
 | `[AMOUNT]` shown as a literal token | Keeps the gap visible and machine-searchable. A plausible-looking number "for demo purposes" is exactly the failure mode the placeholder strategy exists to prevent. |
 | Error summary moved above the form | Found during the accessibility pass: it was rendering after the fields, so a screen-reader user met the errors before the summary explaining them. |
@@ -29,16 +29,16 @@ These prototypes are **iteration artifacts, not deliverables**. No version is "f
 
 ## v1 — 2026-08-09
 
-*Applies Phase 3 Amendments A1–A4. Architecture was amended first; the prototype was then brought into line.*
+*Applies Phase 3 Amendments AM-01–AM-04. Architecture was amended first; the prototype was then brought into line.*
 
 | Change | Why it changed |
 |---|---|
-| Cluster tiles flow to fit available width; small clusters get a compressed header | v0 exposed that real clusters are **6 / 2 / 5 / 3**, not the 4 × 4 Phase 3 assumed. Mind, with two events, rendered as a near-empty row that read like a bug. The content is correct; the layout was wrong. → **Amendment A2** |
-| Keyboard tab order stated positionally, no fixed per-cluster indices | Same root cause. Phase 3 §8.A enumerated absolute tab numbers assuming four tiles per cluster. Tile count is a property of content, not of interface. → **Amendment A1** |
-| Zone E (judging & materials) renders one column, two columns, or a single line, depending on what the source contains | v0 held a fixed two-column layout, which left a hollow column on the **10 of 16 events with no stated judging criteria**. A hollow box implies information exists and is being withheld. The alternative — inventing plausible criteria — would have been the most damaging invention available on this platform. → **Amendment A3** |
+| Cluster tiles flow to fit available width; small clusters get a compressed header | v0 exposed that real clusters are **6 / 2 / 5 / 3**, not the 4 × 4 Phase 3 assumed. Mind, with two events, rendered as a near-empty row that read like a bug. The content is correct; the layout was wrong. → **Amendment AM-02** |
+| Keyboard tab order stated positionally, no fixed per-cluster indices | Same root cause. Phase 3 §8.A enumerated absolute tab numbers assuming four tiles per cluster. Tile count is a property of content, not of interface. → **Amendment AM-01** |
+| Zone E (judging & materials) renders one column, two columns, or a single line, depending on what the source contains | v0 held a fixed two-column layout, which left a hollow column on the **10 of 16 events with no stated judging criteria**. A hollow box implies information exists and is being withheld. The alternative — inventing plausible criteria — would have been the most damaging invention available on this platform. → **Amendment AM-03** |
 | Zone E label derived from what is actually rendered | Found while testing the fix above: three events (Dumb Charades, G.K. Quiz, Fashion Show) have *neither* judging criteria nor materials, and the first fix labelled their zone "Materials" while showing none. Same class of error as the one being fixed — a label asserting content that isn't there. |
 | Events without judging criteria still carry one honest line | Total silence would imply the event is unjudged, when in fact every event in the rulebook ends with "the judges' decision is final". Unknown ≠ none. |
-| Search annotation now cites the standing decision | Text search was re-evaluated against all 16 real events and remains rejected. → **Amendment A4** |
+| Search annotation now cites the standing decision | Text search was re-evaluated against all 16 real events and remains rejected. → **Amendment AM-04** |
 
 **Not changed, deliberately:** cluster membership (real content wins — Phase 0 §3.4 was right all along; the 4 × 4 error entered at Phase 3), the TBD placeholder strategy (validated as-is), and payment (untouched).
 

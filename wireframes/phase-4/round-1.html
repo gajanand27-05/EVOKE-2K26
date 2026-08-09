@@ -213,7 +213,7 @@
   </div>
 </header>
 
-<p class="note-banner"><strong>Reading this:</strong> the bar above is prototype scaffolding, not part of the product. Dashed boxes are Phase&nbsp;3 content zones. Everything in a <span class="tbd">TBD</span> tag is information the organizer has not supplied — it is never invented. Default season is <em>Announcement</em>, the honest current state. <strong>v1</strong> applies Phase 3 Amendments A1–A4 — see <code>wireframes/phase-4/CHANGELOG.md</code> for what changed and why.</p>
+<p class="note-banner"><strong>Reading this:</strong> the bar above is prototype scaffolding, not part of the product. Dashed boxes are Phase&nbsp;3 content zones. Everything in a <span class="tbd">TBD</span> tag is information the organizer has not supplied — it is never invented. Default season is <em>Announcement</em>, the honest current state. <strong>v1</strong> applies Phase 3 Amendments AM-01–AM-04 — see <code>wireframes/phase-4/CHANGELOG.md</code> for what changed and why.</p>
 
 <div class="stage">
   <div class="frame mobile" id="frame">
@@ -435,9 +435,9 @@
         '<p class="sr" role="status" id="filter-status">Showing '+
           (state.filter==="All"?"all 16 events":EVENTS.filter(function(e){return e.c===state.filter;}).length+" "+state.filter+" events")+'</p>'+
         groups+
-        anno("Zone B · uneven by design (Amendment A2)",
+        anno("Zone B · uneven by design (Amendment AM-02)",
           "Clusters are <strong>6 / 2 / 5 / 3</strong>. Phase 3 originally assumed 4×4; that assumption is now withdrawn. Tiles flow to fit the space, so a 6-event cluster and a 2-event cluster both look deliberate. The reduction comes from <em>naming</em> four groups, not from equal counts.")+
-        anno("No search box (Amendment A4)",
+        anno("No search box (Amendment AM-04)",
           "Re-evaluated against all 16 real events and still rejected: clusters reduce the set faster than typing, and a search field implies a catalogue you could get lost in. Re-opens only if the catalogue grows substantially.")+
       '</div>'+
       '<div class="zone"><span class="zlabel">Zone C · Exits</span>'+
@@ -507,7 +507,7 @@
                         : (hasB ? 'Materials' : 'Judging');
         return '<div class="zone"><span class="zlabel">Zone E · '+zlab+'</span>'+
           wrap + note +
-          anno("Zone E · adaptive (Amendment A3)",
+          anno("Zone E · adaptive (Amendment AM-03)",
             "Judging criteria exist for only 6 of 16 events. Two columns appear <em>only</em> when both blocks have content — otherwise one column, never a hollow box. The missing case still says so, because silence here would imply the event is unjudged when in fact every event ends with the judges’ decision.")+
         '</div>';
       })()+

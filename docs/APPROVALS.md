@@ -49,6 +49,8 @@ Add a row to the log below and update the status table above. Keep it short and 
 | Date | Gate | Decision | By | Note |
 |---|---|---|---|---|
 | 2026-08-09 | Phase 3 — Interface Architecture | **PASSED** (9.7/10) | Project owner | Approved as a complete interface-architecture artifact, not a plan for wireframes. Standing instruction attached: stop expanding architecture documentation; the next phase produces interface artifacts, not another specification. |
+| 2026-08-09 | Phase 4 Round 1 | **PASSED** | Project owner | Approved after v1 applied Amendments AM-01–AM-04. |
+| 2026-08-09 | Phase 4 Round 2 | **HELD** | Project owner | Prototype accepted (9.8/10); round blocked by F9 — whether the registrant is also a participant. A product rule, not a design fault. Registration flow frozen until organizer question A1 is answered. |
 
 ---
 
