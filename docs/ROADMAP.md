@@ -34,6 +34,33 @@ Individual phase documents were written at different times and some contain stal
 
 **Standing constraint (owner, 2026-08-09):** stop expanding the architecture documentation. Do not add further architecture unless an actual contradiction is discovered. Phase 4 output is interface artifacts, not specification.
 
+## Standing practice — the amendment loop
+
+**When reality contradicts the architecture, the architecture is amended first and the prototype follows.** Never the reverse, and never "note it and move on".
+
+The loop, in order:
+
+```
+contradiction discovered (usually mid-build, on contact with real content)
+        ↓
+STOP building
+        ↓
+amend the architecture, and record the amendment in its Amendment Log
+        ↓
+build from the amendment
+        ↓
+re-test
+```
+
+Two things this prevents:
+
+1. **Documentation drift** — a prototype that quietly does something the specification does not say, so the specification slowly becomes fiction.
+2. **The prototype outranking the architecture undocumented** — where the real design lives in whoever last touched the code.
+
+The amendment is written *before* the fix, not after. In practice contradictions surface mid-build rather than during a tidy review step: Amendment AM-05 was found on the first screen of Round 2, when registration could not honestly declare how many steps it had. Had that waited until the round's report, five screens would have been built on a statement known to be untrue.
+
+Amendments are numbered `AM-nn` and live in the amended document's own Amendment Log, so the record sits beside the thing it corrects. (`A1`–`A8`, `B1`–`B12` etc. are content-object codes from the Phase 2.5 inventory — do not reuse them for amendments.)
+
 ## The constitutions
 
 Phases 0, 1, 1.5, and 1.75 are **immutable**. Every later phase must trace its decisions back to them. A contradiction requires written justification and owner approval — never a silent change of direction.
