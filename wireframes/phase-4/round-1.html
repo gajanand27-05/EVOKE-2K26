@@ -129,10 +129,14 @@
   .cluster-head h3{margin:0;font-size:.95rem;letter-spacing:.02em}
   .cluster-head .count{font-size:.7rem;color:var(--mid);font-family:ui-monospace,monospace}
   .cluster-head .kind{font-size:.68rem;color:var(--mid);margin-left:auto;font-family:ui-monospace,monospace}
+  .cl-blurb{font-size:.78rem;color:var(--mid);margin:0 0 9px}
+  .cl-sm .cluster-head{margin-top:14px}
+  .cl-sm .cl-blurb{display:inline;font-size:.75rem}
+  .cl-sm .cl-blurb::after{content:""}
 
   .tiles{display:grid;gap:8px}
-  .frame.tablet .tiles{grid-template-columns:1fr 1fr}
-  .frame.desktop .tiles{grid-template-columns:1fr 1fr 1fr}
+  .frame.tablet .tiles{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+  .frame.desktop .tiles{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
   .tile{display:block;width:100%;text-align:left;font:inherit;background:transparent;
     border:1px solid var(--wire);padding:11px;cursor:pointer;color:var(--ink);min-height:44px}
   .tile:hover{border-color:var(--ink)}
@@ -163,6 +167,8 @@
   .rules li{margin-bottom:7px;max-width:62ch}
   .rules li:last-child{margin-bottom:0}
   .final-note{margin-top:10px;font-size:.82rem;border-left:3px solid var(--ink);padding-left:9px}
+  .crit-note{font-size:.83rem;color:var(--mid);margin:0;max-width:60ch}
+  .crit-note + .anno{margin-top:9px}
 
   .two-col{display:grid;gap:10px}
   .frame.desktop .two-col{grid-template-columns:1fr 1fr}
@@ -185,7 +191,7 @@
 </style>
 
 <header class="chrome">
-  <h1>EVOKE 2K26 · Phase 4 Round 1<span>Low-fidelity wireframe — structure only, not visual design</span></h1>
+  <h1>EVOKE 2K26 · Phase 4 Round 1 · v1<span>Low-fidelity wireframe — structure only, not visual design</span></h1>
   <div class="ctrl"><span class="lbl" id="vp-l">Viewport</span>
     <div class="seg" role="group" aria-labelledby="vp-l">
       <button type="button" data-vp="mobile" aria-pressed="true">Mobile</button>
@@ -207,7 +213,7 @@
   </div>
 </header>
 
-<p class="note-banner"><strong>Reading this:</strong> the bar above is prototype scaffolding, not part of the product. Dashed boxes are Phase&nbsp;3 content zones. Everything in a <span class="tbd">TBD</span> tag is information the organizer has not supplied — it is never invented. Default season is <em>Announcement</em>, the honest current state.</p>
+<p class="note-banner"><strong>Reading this:</strong> the bar above is prototype scaffolding, not part of the product. Dashed boxes are Phase&nbsp;3 content zones. Everything in a <span class="tbd">TBD</span> tag is information the organizer has not supplied — it is never invented. Default season is <em>Announcement</em>, the honest current state. <strong>v1</strong> applies Phase 3 Amendments A1–A4 — see <code>wireframes/phase-4/CHANGELOG.md</code> for what changed and why.</p>
 
 <div class="stage">
   <div class="frame mobile" id="frame">
@@ -398,11 +404,11 @@
       var evs = EVENTS.filter(function(e){return e.c===c.k;});
       var kinds = {};
       evs.forEach(function(e){ kinds[e.st]=1; });
-      return '<section aria-labelledby="cl-'+c.k+'">'+
+      return '<section class="'+(evs.length<=2?"cl-sm":"")+'" aria-labelledby="cl-'+c.k+'">'+
         '<div class="cluster-head"><h3 id="cl-'+c.k+'">'+c.label+'</h3>'+
-          '<span class="count">'+evs.length+' events</span>'+
+          '<span class="count">'+evs.length+(evs.length===1?' event':' events')+'</span>'+
           '<span class="kind">'+Object.keys(kinds).join(" + ")+'</span></div>'+
-        '<p style="font-size:.78rem;color:var(--mid);margin:0 0 9px">'+c.blurb+'</p>'+
+        '<p class="cl-blurb">'+c.blurb+'</p>'+
         '<div class="tiles">'+ evs.map(function(e){
           return '<button class="tile" type="button" data-event="'+e.id+'" '+
             'aria-label="'+esc(e.n)+' — '+c.label+' — '+esc(s.txt)+'">'+
@@ -429,10 +435,10 @@
         '<p class="sr" role="status" id="filter-status">Showing '+
           (state.filter==="All"?"all 16 events":EVENTS.filter(function(e){return e.c===state.filter;}).length+" "+state.filter+" events")+'</p>'+
         groups+
-        anno("Zone B · real distribution",
-          "Clusters are <strong>6 / 2 / 5 / 3</strong>, not 4×4. Phase 3 §10.E describes the 5-second scan as “4 clusters × 4 events each” — real content contradicts that. Recorded as a Round 1 finding.")+
-        anno("No search box",
-          "Phase 3 §10.A rejects text search for 16 events: clusters narrow better and search implies a catalogue. The Phase 4 brief mentions “searching” — flagged rather than silently added.")+
+        anno("Zone B · uneven by design (Amendment A2)",
+          "Clusters are <strong>6 / 2 / 5 / 3</strong>. Phase 3 originally assumed 4×4; that assumption is now withdrawn. Tiles flow to fit the space, so a 6-event cluster and a 2-event cluster both look deliberate. The reduction comes from <em>naming</em> four groups, not from equal counts.")+
+        anno("No search box (Amendment A4)",
+          "Re-evaluated against all 16 real events and still rejected: clusters reduce the set faster than typing, and a search field implies a catalogue you could get lost in. Re-opens only if the catalogue grows substantially.")+
       '</div>'+
       '<div class="zone"><span class="zlabel">Zone C · Exits</span>'+
         '<a class="backlink" href="#" data-go="stub-rules">General rules &amp; eligibility →</a>'+
@@ -485,20 +491,26 @@
           "Rules are always visible — never behind an accordion (Blacklist #44). Wording follows the rulebook; nothing is paraphrased into a different meaning (Bible Constitution 19).")+
       '</div>'+
 
-      '<div class="zone"><span class="zlabel">Zone E · Judging &amp; materials</span>'+
-        '<div class="two-col">'+
-          '<div><h2 class="sec">Judged on</h2>'+
-            (e.judging?'<ul class="rules">'+e.judging.map(function(j){return '<li>'+esc(j)+'</li>';}).join('')+'</ul>'
-                      :'<p style="font-size:.85rem;margin:0"><span class="tbd">Criteria not stated in the rulebook</span></p>')+
-          '</div>'+
-          '<div><h2 class="sec">Bring with you</h2>'+
-            (e.bring.length?'<ul class="rules">'+e.bring.map(function(b){return '<li>'+esc(b)+'</li>';}).join('')+'</ul>'
-                           :'<p style="font-size:.85rem;margin:0;color:var(--mid)">Nothing specified.</p>')+
-          '</div>'+
-        '</div>'+
-        anno("Zone E · honest gaps",
-          "Judging criteria exist for only 6 of 16 events in the source. The rest say so plainly. Fabricating criteria here would be the easiest and most damaging invention in the whole platform.")+
-      '</div>'+
+      (function(){
+        var hasJ = !!(e.judging && e.judging.length), hasB = !!e.bring.length;
+        var blocks = "";
+        if(hasJ){ blocks += '<div><h2 class="sec">Judged on</h2><ul class="rules">'+
+          e.judging.map(function(j){return '<li>'+esc(j)+'</li>';}).join('')+'</ul></div>'; }
+        if(hasB){ blocks += '<div><h2 class="sec">Bring with you</h2><ul class="rules">'+
+          e.bring.map(function(b){return '<li>'+esc(b)+'</li>';}).join('')+'</ul></div>'; }
+        var wrap = (hasJ && hasB) ? '<div class="two-col">'+blocks+'</div>' : blocks;
+        var note = hasJ ? "" :
+          '<p class="crit-note">The rulebook does not list judging criteria for this event. '+
+          'The judges’ decision is final. <span class="tbd">Criteria TBD (organizer)</span></p>';
+        if(!hasJ && !hasB) wrap = '';
+        var zlab = hasJ ? (hasB ? 'Judging &amp; materials' : 'Judging')
+                        : (hasB ? 'Materials' : 'Judging');
+        return '<div class="zone"><span class="zlabel">Zone E · '+zlab+'</span>'+
+          wrap + note +
+          anno("Zone E · adaptive (Amendment A3)",
+            "Judging criteria exist for only 6 of 16 events. Two columns appear <em>only</em> when both blocks have content — otherwise one column, never a hollow box. The missing case still says so, because silence here would imply the event is unjudged when in fact every event ends with the judges’ decision.")+
+        '</div>';
+      })()+
 
       '<div class="zone"><span class="zlabel">Zone F · Questions</span>'+
         '<div class="acc">'+
