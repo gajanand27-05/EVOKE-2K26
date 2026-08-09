@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVOKE 2K26 — Phase 4 Round 3 Wireframe</title>
+</head>
+<body>
+
+<style>
+  :root{
+    --paper:#FAFAF8; --ink:#1A1A18; --wire:#C9C9C2; --wire-2:#E4E4DE;
+    --mid:#6B6B66; --note:#2D5BA8; --note-bg:#EDF1F9;
+    --pend:#8A6A1F; --pend-bg:#FBF4E2; --absent:#5A5A66; --absent-bg:#EFEFF3;
+    --frame-bg:#EFEFEA; --err:#A4322A; --err-bg:#FBEDEC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#1B1B1E; --ink:#EDEDE8; --wire:#3E3E44; --wire-2:#2A2A2F;
+      --mid:#9A9A94; --note:#89AEEA; --note-bg:#1E2735;
+      --pend:#D9B45F; --pend-bg:#2C2618; --absent:#A0A0AC; --absent-bg:#24242A;
+      --frame-bg:#121214; --err:#E88C82; --err-bg:#2E1D1B; }
+  }
+  :root[data-theme="dark"]{ --paper:#1B1B1E; --ink:#EDEDE8; --wire:#3E3E44; --wire-2:#2A2A2F;
+    --mid:#9A9A94; --note:#89AEEA; --note-bg:#1E2735;
+    --pend:#D9B45F; --pend-bg:#2C2618; --absent:#A0A0AC; --absent-bg:#24242A;
+    --frame-bg:#121214; --err:#E88C82; --err-bg:#2E1D1B; }
+  :root[data-theme="light"]{ --paper:#FAFAF8; --ink:#1A1A18; --wire:#C9C9C2; --wire-2:#E4E4DE;
+    --mid:#6B6B66; --note:#2D5BA8; --note-bg:#EDF1F9;
+    --pend:#8A6A1F; --pend-bg:#FBF4E2; --absent:#5A5A66; --absent-bg:#EFEFF3;
+    --frame-bg:#EFEFEA; --err:#A4322A; --err-bg:#FBEDEC; }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--frame-bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.5}
+
+  .chrome{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:2px solid var(--ink);
+    padding:10px 16px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .chrome h1{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin:0;
+    font-family:ui-monospace,monospace;font-weight:700}
+  .chrome h1 span{display:block;font-weight:400;color:var(--mid);letter-spacing:.06em}
+  .ctrl{display:flex;align-items:center;gap:6px}
+  .ctrl > .lbl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);
+    font-family:ui-monospace,monospace}
+  .seg{display:flex;border:1px solid var(--wire);border-radius:2px;overflow:hidden}
+  .seg button{font:inherit;font-size:.72rem;padding:5px 10px;background:transparent;border:0;
+    border-right:1px solid var(--wire);color:var(--mid);cursor:pointer;font-family:ui-monospace,monospace}
+  .seg button:last-child{border-right:0}
+  .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .seg button:focus-visible,.chrome button:focus-visible{outline:2px solid var(--note);outline-offset:1px}
+
+  .note-banner{background:var(--note-bg);border-bottom:1px solid var(--wire);padding:8px 16px;font-size:.78rem}
+  .note-banner strong{font-family:ui-monospace,monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+
+  .stage{padding:22px 16px 60px;display:flex;justify-content:center}
+  .frame{background:var(--paper);border:2px solid var(--ink);width:100%;max-width:390px;min-height:660px;position:relative}
+  .frame.tablet{max-width:768px}
+  .frame.desktop{max-width:1180px}
+  .frame-tag{position:absolute;top:-11px;left:12px;background:var(--paper);padding:0 6px;font-size:.6rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--mid);font-family:ui-monospace,monospace}
+
+  .zone{border:1px dashed var(--wire);margin:10px;padding:12px;position:relative}
+  .zone > .zlabel{position:absolute;top:-9px;left:8px;background:var(--paper);padding:0 5px;font-size:.58rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--mid);font-family:ui-monospace,monospace}
+  .anno{display:none;background:var(--note-bg);border-left:3px solid var(--note);padding:7px 9px;margin:9px 0 0;font-size:.73rem;line-height:1.45}
+  .anno b{font-family:ui-monospace,monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--note);display:block;margin-bottom:2px}
+  .flag{display:none;background:var(--err-bg);border-left:3px solid var(--err);padding:7px 9px;margin:9px 0 0;font-size:.73rem;line-height:1.45}
+  .flag b{font-family:ui-monospace,monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--err);display:block;margin-bottom:2px}
+  body.show-anno .anno,body.show-anno .flag{display:block}
+
+  .pending{display:inline-block;background:var(--pend-bg);color:var(--pend);border:1px dashed var(--pend);
+    padding:1px 6px;font-size:.68rem;font-family:ui-monospace,monospace}
+  .absent{display:inline-block;background:var(--absent-bg);color:var(--absent);border:1px solid var(--absent);
+    padding:1px 6px;font-size:.68rem;font-family:ui-monospace,monospace}
+  .proto{display:inline-block;background:transparent;color:var(--err);border:1px solid var(--err);
+    padding:1px 6px;font-size:.66rem;font-family:ui-monospace,monospace;letter-spacing:.05em}
+  .legend{border:1px solid var(--wire);padding:10px;font-size:.78rem;margin:10px}
+  .legend p{margin:0 0 7px}
+  .legend p:last-child{margin:0}
+
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{position:static;display:block;margin:8px;padding:6px;border:2px solid var(--note);font-size:.8rem}
+  .site-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--wire)}
+  .logo{font-weight:700;letter-spacing:.04em;font-size:.9rem}
+  .site-foot{border-top:1px solid var(--wire);padding:12px;font-size:.72rem;color:var(--mid)}
+
+  .backlink{display:inline-block;font-size:.8rem;color:var(--ink);border:0;border-bottom:1px solid var(--wire);
+    padding:4px 0;min-height:28px;background:none;cursor:pointer;font-family:inherit}
+  .cta{display:block;width:100%;font:inherit;font-size:.92rem;font-weight:600;padding:12px 18px;min-height:44px;
+    border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-align:center;margin-bottom:8px}
+  .cta.secondary{font-weight:400;border-width:1px;font-size:.85rem}
+  .cta:focus-visible,.backlink:focus-visible,.acc-q:focus-visible,.chipf:focus-visible,.hubcard:focus-visible{outline:3px solid var(--note);outline-offset:2px}
+  .frame.desktop .cta,.frame.tablet .cta{width:auto;min-width:200px;display:inline-block;margin-right:8px}
+
+  .hubgrid{display:grid;gap:9px}
+  .frame.tablet .hubgrid,.frame.desktop .hubgrid{grid-template-columns:1fr 1fr}
+  .hubcard{border:1px solid var(--wire);padding:12px;text-align:left;background:transparent;color:var(--ink);
+    font:inherit;cursor:pointer;min-height:44px}
+  .hubcard strong{display:block;font-size:.92rem;margin-bottom:3px}
+  .hubcard span{font-size:.78rem;color:var(--mid)}
+  .hubcard:hover{border-color:var(--ink)}
+
+  .acc-q{width:100%;text-align:left;font:inherit;font-size:.88rem;background:transparent;border:0;
+    border-bottom:1px solid var(--wire-2);padding:13px 0;cursor:pointer;color:var(--ink);
+    display:flex;justify-content:space-between;gap:10px;min-height:44px}
+  .acc-a{font-size:.85rem;padding:0 0 14px;max-width:62ch}
+  .acc-a[hidden]{display:none}
+  .acc-a .src{display:block;margin-top:7px;font-size:.78rem;color:var(--mid)}
+  .faqgroup{margin-bottom:16px}
+  .faqgroup h3{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);
+    font-family:ui-monospace,monospace;margin:0 0 4px}
+
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .chipf{font:inherit;font-size:.75rem;padding:7px 11px;min-height:36px;background:transparent;
+    border:1px solid var(--wire);cursor:pointer;color:var(--mid);font-family:ui-monospace,monospace}
+  .chipf[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .day{border-bottom:1px solid var(--ink);padding-bottom:4px;margin:16px 0 8px;font-size:.95rem}
+  .slot{display:flex;gap:11px;border:1px solid var(--wire-2);padding:10px;margin-bottom:7px;align-items:baseline}
+  .slot.parallel{border-left:4px solid var(--ink)}
+  .slot .t{flex:0 0 92px;font-family:ui-monospace,monospace;font-size:.8rem;font-variant-numeric:tabular-nums}
+  .slot .n{font-size:.88rem;font-weight:600}
+  .slot .v{font-size:.76rem;color:var(--mid)}
+  .frame.mobile .slot{flex-direction:column;gap:4px}
+  .frame.mobile .slot .t{flex:none}
+  .parallel-note{font-size:.74rem;color:var(--mid);margin:-2px 0 8px 0}
+
+  .rules{margin:0;padding-left:1.15em;font-size:.86rem}
+  .rules li{margin-bottom:6px;max-width:62ch}
+  .stopbox{border:2px solid var(--err);padding:14px;margin:10px}
+  .stopbox h2{margin:0 0 8px;font-size:1rem;color:var(--err)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="chrome">
+  <h1>EVOKE 2K26 · Phase 4 Round 3 · v0<span>Schedule · Support — independent of the frozen Round 2</span></h1>
+  <div class="ctrl"><span class="lbl" id="vp-l">Viewport</span>
+    <div class="seg" role="group" aria-labelledby="vp-l">
+      <button type="button" data-vp="mobile" aria-pressed="true">Mobile</button>
+      <button type="button" data-vp="tablet" aria-pressed="false">Tablet</button>
+      <button type="button" data-vp="desktop" aria-pressed="false">Desktop</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="ss-l">Season</span>
+    <div class="seg" role="group" aria-labelledby="ss-l">
+      <button type="button" data-season="announcement" aria-pressed="true">Announcement (real)</button>
+      <button type="button" data-season="approach" aria-pressed="false">Approach</button>
+      <button type="button" data-season="post" aria-pressed="false">Post-event</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="dn-l">Schedule density</span>
+    <div class="seg" role="group" aria-labelledby="dn-l">
+      <button type="button" data-den="sparse" aria-pressed="false">Sparse</button>
+      <button type="button" data-den="full" aria-pressed="true">All 16</button>
+    </div>
+  </div>
+  <div class="ctrl"><span class="lbl" id="an-l">Notes</span>
+    <div class="seg" role="group" aria-labelledby="an-l">
+      <button type="button" id="anno-toggle" aria-pressed="false">Annotations</button>
+    </div>
+  </div>
+</header>
+
+<p class="note-banner"><strong>This round's job:</strong> let the platform say <em>“we don’t know yet”</em> and <em>“this doesn’t exist”</em> as two visibly different things. Round 2 screens (P-06–P-13) are frozen and untouched. <strong>Announcements is stopped</strong> — see the Announcements card for why.</p>
+
+<div class="stage">
+  <div class="frame mobile" id="frame">
+    <span class="frame-tag" id="frame-tag">Mobile · 390px</span>
+    <div id="screen"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var EVENTS=[
+    {n:"Dumb Charades",c:"Mind"},{n:"G.K. Quiz — written prelims",c:"Mind"},
+    {n:"G.K. Quiz — oral final",c:"Mind"},{n:"Fashion Show",c:"Stage"},
+    {n:"Group Song",c:"Stage"},{n:"Solo Song",c:"Stage"},
+    {n:"Group Dance",c:"Stage"},{n:"Solo Dance",c:"Stage"},
+    {n:"Instrumental Music",c:"Stage"},{n:"Face Painting",c:"Art"},
+    {n:"Cooking Without Fire",c:"Maker"},{n:"Vegetable Carving",c:"Maker"},
+    {n:"Pot Painting",c:"Art"},{n:"Art and Craft",c:"Art"},
+    {n:"Collage Competition",c:"Art"},{n:"Pencil Sketch",c:"Art"},
+    {n:"Best Out of Waste",c:"Maker"}
+  ];
+  var UNSCHEDULED=["Instrumental Music","Fashion Show"];
+
+  var st={screen:"hub",season:"announcement",den:"full",open:{},filter:"All"};
+  var frame=document.getElementById("frame"),tag=document.getElementById("frame-tag"),out=document.getElementById("screen");
+  function e(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function anno(t,b){return '<div class="anno"><b>'+e(t)+'</b>'+b+'</div>';}
+  function flag(t,b){return '<div class="flag"><b>'+e(t)+'</b>'+b+'</div>';}
+  function head(){return '<a class="skip" href="#main">Skip to main content</a>'+
+    '<div class="site-head"><span class="logo">EVOKE 2K26</span><span style="font-size:.72rem;color:var(--mid)">Information</span></div>';}
+  function foot(){return '<div class="site-foot">EVOKE 2K26 · Host school <span class="pending">not announced yet</span></div>';}
+  function back(to,label){return '<button class="backlink" data-go="'+to+'">← '+e(label)+'</button>';}
+
+  /* ---------------- HUB ---------------- */
+  function hub(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-19 · Information hub</span>'+
+      '<h1 style="font-size:1.25rem;margin:0 0 4px">Information</h1>'+
+      '<p style="font-size:.85rem;color:var(--mid);margin:0 0 12px">The questions that do not belong to any one event.</p>'+
+      '<div class="hubgrid">'+
+       '<button class="hubcard" data-go="faq"><strong>Questions &amp; answers</strong><span>Eligibility, what to bring, fees, dates</span></button>'+
+       '<button class="hubcard" data-go="schedule"><strong>Schedule</strong><span>When each event runs</span></button>'+
+       '<button class="hubcard" data-go="ann"><strong>Announcements</strong><span class="proto">stopped — see inside</span></button>'+
+      '</div>'+
+      flag("Finding F13 — no Contact card, and that is correct in isolation",
+        "Phase 2.5 §10.1 forbids publishing a contact affordance with nothing behind it, and the organizer contact (Q12 / question B5) is unresolved. So Contact is absent rather than broken. See F14 — it removes the platform's only escape hatch.")+
+      anno("Reached, not advertised","Participants arrive here from the footer when a doubt forms, not from a permanent menu item competing with the journey (Phase 2 Part 8.2). About and Privacy exist in the architecture but are outside this round's three named experiences.")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------------- ANNOUNCEMENTS — STOPPED ---------------- */
+  function ann(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-15 · Announcements</span>'+back("hub","Information")+'</div>'+
+     '<div class="stopbox"><h2>Stopped — architecture contradiction</h2>'+
+      '<p style="font-size:.86rem;margin:0 0 10px">This experience was not prototyped. Building it would have required either inventing a screen the approved architecture forbids, or editing a screen this round is forbidden to touch.</p>'+
+      '<p style="font-size:.86rem;margin:0 0 6px"><strong>The contradiction, precisely:</strong></p>'+
+      '<ul class="rules">'+
+       '<li>The Round 3 brief names <strong>P-15 Announcements</strong>. In Phase 3, <strong>P-15 is About</strong> — announcements have no screen number at all.</li>'+
+       '<li>Phase 2.5 §2.3 #2 bans a news/blog section outright: <em>“Announcements (D1) absorb this need; a blog adds authorial noise.”</em></li>'+
+       '<li>Phase 2.5 §5.1 gives announcements exactly two display homes: <strong>Your Space</strong> — frozen in Round 2 — and <strong>the latest one on Welcome</strong>, built in Round 1.</li>'+
+      '</ul>'+
+      '<p style="font-size:.86rem;margin:10px 0 0">So the announcements experience has no home this round may touch. Resolving it needs a decision, not a design: either announcements stay where the architecture put them, or a new page contract is approved through the Phase 3 Part 3 process.</p>'+
+      '<p style="font-size:.86rem;margin:10px 0 0">Recorded as <strong>Finding F17</strong>. No amendment was written, because an explicit structural ban cannot be overturned by the agent that discovered it.</p>'+
+     '</div></main>'+foot();
+  }
+
+  /* ---------------- SCHEDULE ---------------- */
+  function schedule(){
+    if(st.season==="announcement") return scheduleEmpty();
+    var list = st.den==="sparse" ? EVENTS.slice(0,3) : EVENTS;
+    var shown = list.filter(function(x){ return st.filter==="All" || x.c===st.filter; });
+    var scheduled = shown.filter(function(x){ return UNSCHEDULED.indexOf(x.n)===-1; });
+    var pendingList = shown.filter(function(x){ return UNSCHEDULED.indexOf(x.n)!==-1; });
+
+    var rows="";
+    for(var i=0;i<scheduled.length;i++){
+      var par = (i>0 && i%3===1);
+      rows += (par?'<p class="parallel-note">At the same time:</p>':'')+
+        '<div class="slot'+(par?' parallel':'')+'"><span class="t">[TIME]</span>'+
+        '<span><span class="n">'+e(scheduled[i].n)+'</span><br>'+
+        '<span class="v">'+e(scheduled[i].c)+' · [VENUE]</span></span></div>';
+    }
+
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-14 Zone A</span>'+back("hub","Information")+
+      '<h1 style="font-size:1.25rem;margin:8px 0 4px">Schedule</h1>'+
+      '<p style="font-size:.85rem;color:var(--mid);margin:0">'+
+      (st.season==="post"?'What ran, and when.':'When each event runs, and where.')+'</p>'+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-14 Zone B · '+(st.season==="post"?"Archive":"Published")+'</span>'+
+      '<div class="chips" role="group" aria-label="Filter by cluster">'+
+      ["All","Stage","Mind","Art","Maker"].map(function(c){
+        return '<button class="chipf" data-f="'+c+'" aria-pressed="'+(st.filter===c)+'">'+e(c)+'</button>';}).join('')+'</div>'+
+      '<p class="sr" role="status">Showing '+shown.length+' events</p>'+
+      '<h2 class="day">Day 1 — <span class="pending">date not announced</span></h2>'+
+      rows+
+      (pendingList.length
+        ? '<h2 class="day" style="margin-top:20px">Not yet scheduled</h2>'+
+          pendingList.map(function(x){return '<div class="slot"><span class="t"><span class="pending">no time</span></span>'+
+            '<span><span class="n">'+e(x.n)+'</span><br><span class="v">'+e(x.c)+'</span></span></div>';}).join('')+
+          '<p style="font-size:.78rem;color:var(--mid);margin:6px 0 0">These events are confirmed but have no time yet. They will move up when times are set.</p>'
+        : '')+
+      anno("Structure without invented times","Every time and venue is a literal token. Nothing on this screen could be mistaken for a confirmed date. Same technique as the Round 2 payment placeholder — the shape is proven, the facts are the organizer's.")+
+      anno("Parallel events","Where two events share a slot the second is marked “at the same time”, with a rule down its left edge — not colour alone. The schedule states the overlap; it says nothing about what a participant should do, because no such policy exists in the source.")+
+      flag("Finding F15 — a schedule without dates cannot be planned from",
+        "Ordering, grouping, filtering and the not-yet-scheduled section all work. But a participant can plan nothing. The Approach season cannot honestly begin until dates (C2) and venue (C3) arrive. Structure ready; usefulness entirely organizer-dependent.")+
+      flag("Finding F18 — “my events” and conflict warnings are blocked",
+        "The brief asks the schedule to answer “what do I need to care about?” before showing everything. Filtering to a participant's own events requires the registration data model, which is frozen behind question A1 — and a real conflict warning requires knowing which events are theirs. Cluster filtering is offered instead. Stopped rather than approximated.")+
+     '</div></main>'+foot();
+  }
+
+  function scheduleEmpty(){
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-14 Zone A</span>'+back("hub","Information")+
+      '<h1 style="font-size:1.25rem;margin:8px 0 4px">Schedule</h1></div>'+
+     '<div class="zone"><span class="zlabel">P-14 Zone B · Not yet published</span>'+
+      '<p style="font-size:.92rem;margin:0 0 8px">The schedule has not been published yet. <span class="pending">not announced yet</span></p>'+
+      '<p style="font-size:.85rem;color:var(--mid);margin:0 0 10px">It is normally published as the festival approaches. Until then, every event page tells you how long that event runs — which is the part you can prepare for.</p>'+
+      '<button class="cta secondary" data-go="hub">Back to information</button>'+
+      anno("An empty state that still answers something","It names what is missing, why, when it arrives, and what to do instead. An empty state that only says “nothing here” is a dead end (Phase 2 Part 14). No call to action beyond the way back — the participant is allowed to simply leave (Phase 2 Part 23, Silence).")+
+     '</div></main>'+foot();
+  }
+
+  /* ---------------- SUPPORT / FAQ ---------------- */
+  var FAQ=[
+    {g:"Taking part",q:"What is EVOKE 2K26?",s:"answered",
+     a:"An inter-school festival of sixteen events — on stage and off it. Students enter alone or in teams, bring their own materials, and are judged on the day.",src:null},
+    {g:"Taking part",q:"Who can take part?",s:"pending",
+     a:"The classes and ages eligible to enter have not been announced. We will publish them here as soon as the organizers confirm them.",src:null},
+    {g:"Taking part",q:"Can I enter more than one event?",s:"pending",
+     a:"Not decided yet. Whether a student or a team may enter several events, and whether there is a limit, is with the organizers.",src:null},
+    {g:"Taking part",q:"Do I need a team?",s:"answered",
+     a:"It depends on the event. Some are entered alone; Group Dance takes 5 to 8; Group Song takes 3 or 4.",src:"Each event page states its own team size."},
+    {g:"On the day",q:"What should I bring?",s:"answered",
+     a:"As a rule, off-stage events expect you to bring your own materials, and dance and song entries bring their own track on a pen drive.",src:"The exact list is on each event page — that is where it is kept up to date."},
+    {g:"On the day",q:"What happens if I arrive late for my event?",s:"absent",
+     a:"The rulebook does not set out a late-arrival rule, so we cannot state one. Group Song asks entrants to be on time; beyond that, ask on the day.",src:null},
+    {g:"On the day",q:"How are ties decided?",s:"absent",
+     a:"The rulebook does not describe a tie-break procedure. What it does say, for every event, is that the judges’ decision is final.",src:null},
+    {g:"Money and dates",q:"Is there an entry fee?",s:"pending",
+     a:"Not announced. If a fee applies you will see the exact amount before you are asked to pay anything.",src:null},
+    {g:"Money and dates",q:"When and where is the festival?",s:"pending",
+     a:"Dates and venue have not been announced. They will appear on the schedule as soon as they are confirmed.",src:null},
+    {g:"After registering",q:"How do I find my registration again?",s:"pending",
+     a:"Being decided. When you register you are given a reference number — keep it. How you use it to look your registration up is not settled yet.",src:null}
+  ];
+  function posture(s){
+    if(s==="pending") return '<span class="pending">not announced yet</span>';
+    if(s==="absent")  return '<span class="absent">not in the rulebook</span>';
+    return '';
+  }
+  function faq(){
+    var groups={}; FAQ.forEach(function(f){(groups[f.g]=groups[f.g]||[]).push(f);});
+    var body=Object.keys(groups).map(function(g){
+      return '<div class="faqgroup"><h3>'+e(g)+'</h3>'+groups[g].map(function(f){
+        var id="q"+FAQ.indexOf(f),isOpen=!!st.open[id];
+        return '<div><button class="acc-q" data-acc="'+id+'" aria-expanded="'+isOpen+'" aria-controls="'+id+'">'+
+          '<span>'+e(f.q)+' '+posture(f.s)+'</span><span aria-hidden="true">'+(isOpen?"−":"+")+'</span></button>'+
+          '<p class="acc-a" id="'+id+'"'+(isOpen?"":" hidden")+'>'+e(f.a)+
+          (f.src?'<span class="src">'+e(f.src)+'</span>':'')+'</p></div>';
+      }).join('')+'</div>';
+    }).join('');
+
+    return head()+'<main id="main">'+
+     '<div class="zone"><span class="zlabel">P-16 Zone A</span>'+back("hub","Information")+
+      '<h1 style="font-size:1.25rem;margin:8px 0 4px">Questions &amp; answers</h1>'+
+      '<p style="font-size:.85rem;color:var(--mid);margin:0">Ten questions people actually ask. Where there is no answer, we say which kind of missing it is.</p>'+
+     '</div>'+
+     '<div class="legend"><p><span class="pending">not announced yet</span> &nbsp;An answer exists or will exist — the organizers have not given it to us. It will appear here.</p>'+
+      '<p><span class="absent">not in the rulebook</span> &nbsp;There is no such rule to publish. Saying nothing would imply we were hiding one.</p></div>'+
+     '<div class="zone"><span class="zlabel">P-16 Zone B · Answers</span>'+body+
+      anno("Two kinds of missing — the point of this round",
+        "“Not announced yet” is a promise. “Not in the rulebook” is a fact about the source. Collapsing both into one grey TBD tells a participant to keep waiting for something that is never coming.")+
+      anno("One fact, one home",
+        "Answers about materials and team sizes point at the event page rather than restating it (Phase 2.5 §9.2). A second copy of a rule is a second version of the truth, and it goes stale first.")+
+      anno("No search","Ten questions in four groups. Same reasoning as the event catalogue (Amendment AM-04): at this scale grouping beats typing, and a search box implies a body of content large enough to get lost in.")+
+     '</div>'+
+     '<div class="zone"><span class="zlabel">P-16 Zone C · Still stuck?</span>'+
+      '<p style="font-size:.86rem;margin:0">If your question is not here — <span class="absent">no route available</span></p>'+
+      flag("Finding F14 — the escape hatch is missing",
+        "Phase 2.5 §5.2 guarantees every doubt is one hop from its answer; Phase 2 Part 14 forbids dead ends. Both depend on a contact route that cannot exist while Q12 is unresolved. This is where the guarantee breaks: a participant with an eleventh question has nowhere to go. Not designable around — it needs a real contact.")+
+     '</div></main>'+foot();
+  }
+
+  var V={hub:hub,faq:faq,schedule:schedule,ann:ann};
+  function render(){ out.innerHTML=V[st.screen](); var h=out.querySelector("h1"); if(h) h.setAttribute("tabindex","-1"); }
+
+  document.addEventListener("click",function(ev){
+    var t=ev.target.closest("[data-go],[data-vp],[data-season],[data-den],[data-acc],[data-f],#anno-toggle");
+    if(!t) return;
+    if(t.dataset.vp){ frame.className="frame "+t.dataset.vp;
+      tag.textContent={mobile:"Mobile · 390px",tablet:"Tablet · 768px",desktop:"Desktop · 1180px"}[t.dataset.vp];
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); return; }
+    if(t.dataset.season){ st.season=t.dataset.season;
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); render(); return; }
+    if(t.dataset.den){ st.den=t.dataset.den;
+      t.parentNode.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",String(b===t));}); render(); return; }
+    if(t.id==="anno-toggle"){ var on=document.body.classList.toggle("show-anno"); t.setAttribute("aria-pressed",String(on)); return; }
+    if(t.dataset.acc){ var id=t.dataset.acc; st.open[id]=!st.open[id];
+      var p=document.getElementById(id); t.setAttribute("aria-expanded",String(st.open[id]));
+      p.hidden=!st.open[id]; t.lastElementChild.textContent=st.open[id]?"−":"+"; return; }
+    ev.preventDefault();
+    if(t.dataset.f){ st.filter=t.dataset.f; render(); return; }
+    st.screen=t.dataset.go; render(); var h=out.querySelector("h1"); if(h) h.focus();
+  });
+  render();
+})();
+</script>
+
+</body>
+</html>

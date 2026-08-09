@@ -1,6 +1,22 @@
 # Phase 4 — prototype changelog
 
-Rounds are versioned independently. `round-1.html` is at v1; `round-2.html` is at v0.
+Rounds are versioned independently. `round-1.html` is at v1; `round-2.html` and `round-3.html` are at v0.
+
+---
+
+## Round 3 · v0 — 2026-08-09
+
+Supporting experiences: Schedule and Support/FAQ. Announcements **stopped**.
+
+| Built this way | Why |
+|---|---|
+| Two visually distinct postures — "not announced yet" vs "not in the rulebook" | Building the FAQ with real questions showed that one generic "TBD" tells a participant to keep waiting for an answer that, for some questions, is never coming. The rulebook has no tie-break rule and no late-arrival rule; those are absent, not pending. Phase 2.5 §11.1 already separated these architecturally — they were simply rendering identically. |
+| Schedule shows `[TIME]` / `[VENUE]` tokens, never plausible times | Same technique as the Round 2 payment placeholder. A plausible-looking time would be believed and acted on. |
+| A "not yet scheduled" section | Real festivals confirm an event before they time it. Hiding those events would misrepresent the roster; giving them invented times would be worse. |
+| Parallel events marked in words plus a left rule | Colour alone would fail the non-colour requirement, and the schedule states the overlap without stating a policy — no conflict policy exists in the source. |
+| Announcements not built | Its two architectural homes are a frozen screen and a Round 1 screen, and a public announcements page is explicitly banned by Phase 2.5 §2.3 #2. Stopped and reported as F17 rather than inventing a screen or editing frozen work. |
+
+**Not changed:** Rounds 1 and 2, verified byte-identical to their commits.
 
 ---
 
