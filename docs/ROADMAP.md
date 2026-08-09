@@ -16,11 +16,22 @@ Individual phase documents were written at different times and some contain stal
 | 1.75 | Product Charter | `PHASE-1-75-PRODUCT-CHARTER.md` | Complete (constitution) |
 | 2 | Experience Direction | `PHASE-2-EXPERIENCE-DIRECTION.md` | Complete — owner gate open (`APPROVALS.md`) |
 | 2.5 | Structural Architecture / IA Validation | `PHASE-2-5-STRUCTURAL-ARCHITECTURE.md` | Complete — owner gate open |
-| 3 | Interface Architecture | `PHASE-3-INTERFACE-ARCHITECTURE.md` | Complete — owner gate open |
-| 4 | Visual & Motion Design | not started | Blocked on Phase 3 approval |
-| 5 | Implementation | not started | Blocked on Phase 4 |
+| 3 | Interface Architecture | `PHASE-3-INTERFACE-ARCHITECTURE.md` | **Approved** 2026-08-09 (9.7/10) |
+| 4 | Wireframe & Interaction Prototyping | `wireframes/phase-4/` + round review docs | **In progress** — Round 1 complete, awaiting review |
+| 5 | High-Fidelity Visual Design | not started | Blocked on Phase 4 |
+| 6 | Implementation | not started | Blocked on Phase 5 |
 
-**There is no separate wireframe phase.** Phase 3 delivers the wireframe *blueprint* — zones, hierarchy, reading order, and content objects per screen. Drawing wireframes and every visual decision (colour, type, spacing, motion, event marks, logo) belongs to Phase 4.
+**Phase 4 was redefined by the owner on 2026-08-09.** It was previously scoped as "Motion & Interaction Blueprint". Motion is already sufficiently constrained by Phase 1.5 (laws, gestures, tempo, named exceptions, reduced-motion, performance bounds), and motion should not be designed before the interface has been seen. Phase 4 is therefore **Wireframe & Interaction Prototyping** — low-fidelity, testable interfaces built with real event content.
+
+**Phase 4 runs in five reviewed rounds**, one at a time, each stopping for owner review before the next begins:
+
+1. Entry → Event Discovery → Event Detail
+2. Event Detail → Registration Entry → Registration Flow
+3. Payment placeholder → Confirmation → Your Space
+4. Schedule, announcements, support, secondary areas
+5. System states across every screen
+
+**Standing constraint (owner, 2026-08-09):** stop expanding the architecture documentation. Do not add further architecture unless an actual contradiction is discovered. Phase 4 output is interface artifacts, not specification.
 
 ## The constitutions
 
@@ -28,7 +39,7 @@ Phases 0, 1, 1.5, and 1.75 are **immutable**. Every later phase must trace its d
 
 ## Intended implementation stack
 
-**HTML, CSS, JavaScript, Python, Supabase** — for the implementation phase only (Phase 5).
+**HTML, CSS, JavaScript, Python, Supabase** — for the implementation phase only (Phase 6).
 
 This is a project-level decision, recorded here. It is *not* set by Product Charter §6, which is the 4-question decision filter; documents that previously cited "Charter §6" for the stack were miscitations and have been corrected to point here.
 

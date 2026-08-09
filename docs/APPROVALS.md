@@ -17,9 +17,9 @@
 | **Phase 0 — Discovery approval** | `PHASE-0-DISCOVERY.md` §15 | Approve discovery; answer priority [MISSING] items | **OPEN** | — | — |
 | **Phase 2 — Acceptance Review** | `PHASE-2-EXPERIENCE-DIRECTION.md` Appendix B | Answer the five questions; all five must pass | **OPEN** | — | — |
 | **Phase 2.5 — Gatekeeper Review** | `PHASE-2-5-STRUCTURAL-ARCHITECTURE.md` Part 14 | Answer the five gate questions with evidence; sign the Readiness Report (Part 15) | **OPEN** — Part 15.1 records this row as PENDING | — | — |
-| **Phase 3 — Interface Architecture approval** | `PHASE-3-INTERFACE-ARCHITECTURE.md` header + Part 17 | Approve the specification before Phase 4 begins | **OPEN** | — | — |
+| **Phase 3 — Interface Architecture approval** | `PHASE-3-INTERFACE-ARCHITECTURE.md` header + Part 17 | Approve the specification before Phase 4 begins | **PASSED** — scored 9.7/10 | Project owner | 2026-08-09 |
 
-**All four gates are currently open.**
+**Three gates remain open; Phase 3 is approved.**
 
 ---
 
@@ -48,7 +48,7 @@ Add a row to the log below and update the status table above. Keep it short and 
 
 | Date | Gate | Decision | By | Note |
 |---|---|---|---|---|
-| — | — | — | — | *No decisions recorded yet.* |
+| 2026-08-09 | Phase 3 — Interface Architecture | **PASSED** (9.7/10) | Project owner | Approved as a complete interface-architecture artifact, not a plan for wireframes. Standing instruction attached: stop expanding architecture documentation; the next phase produces interface artifacts, not another specification. |
 
 ---
 
